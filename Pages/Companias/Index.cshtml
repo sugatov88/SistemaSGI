@@ -1,0 +1,68 @@
+﻿@page
+@model SistemaSGI.Pages.Companias.IndexModel
+@{
+    ViewData["Title"] = "Lista de Companias";
+
+
+}
+<div class=" = " container">
+    <div class="row">
+        <div class=" = " col-9">
+            <h2 class=" text-info"> Lista de Companias </h2>
+        </div>
+        <div class="col-3">
+            <a class="btn btn-secondary" asp-page="/Companias/Crear">Crear nueva compania</a>
+        </div>
+        <br />
+        <br />
+        @if (Model.Companias.Count() > 0)
+        {
+            <table id="tblCompanias" class="table table-striped table-bordered" style="width: 100%;">
+                <thead>
+                    <tr>
+                        @*<th>@Html.DisplayFor(m => m.Companias.FirstOrDefault().Id)</th>*@
+                        <th>id </th>
+                        <th>Nit</th>
+                        <th>Nombre </th>
+                        <th>Direccion</th>
+                        <th>Email </th>
+                        <th>Sitio web</th>
+                        <th>Telefono</th>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @foreach (var Companias in Model.Companias)
+                    {
+                    <tr>
+                        <td>@Html.DisplayFor(m => Companias.Id)   </td>
+                        <td>@Html.DisplayFor(m => Companias.nit)   </td>
+                        <td> @Html.DisplayFor(m => Companias.nombre)   </td>
+                        <td>@Html.DisplayFor(m => Companias.direccion)   </td>
+                        <td> @Html.DisplayFor(m => Companias.email)   </td>
+                        <td>@Html.DisplayFor(m => Companias.web)   </td>
+                        <td> @Html.DisplayFor(m => Companias.telefono)   </td>
+
+                        <td>
+                            <a class="btn btn-success" asp-page="../Companias/Detalle" asp-route-id="@Companias.Id"> Detalles</a>
+                            <a class="btn btn-warning" asp-page="../Companias/Editar" asp-route-id="@Companias.Id"> Editar</a>
+                            <a class="btn btn-danger" asp-page="../Companias/Eliminar" asp-route-id="@Companias.Id"> Eliminar</a>
+
+
+                        </td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+
+        }
+        else
+        {
+            <p> no hay Companias</p>
+        }
+
+    </div>
+
+</div>

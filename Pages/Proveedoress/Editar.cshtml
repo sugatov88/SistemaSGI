@@ -1,0 +1,55 @@
+﻿@page
+@model SistemaSGI.Pages.Proveedoress.EditarModel
+@{
+    ViewData["Title"] = "Editar Proveedores";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="text-info">Editar Proveedores</h2>
+
+            <form method="post">
+                <div class="mb-3">
+                    <label asp-for="Proveedores.nombre" class="form-label"></label>
+                    <input asp-for="Proveedores.nombre" class="form-control" />
+                    <span asp-validation-for="Proveedores.nombre" class="text-danger"></span>
+
+                </div>
+             
+                <div class="mb-3">
+                    <label asp-for="Proveedores.direccion" class="form-label"></label>
+                    <input asp-for="Proveedores.direccion" class="form-control" />
+                    <span asp-validation-for="Proveedores.direccion" class="text-danger"></span>
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Proveedores.email" class="form-label"></label>
+                    <input asp-for="Proveedores.email" class="form-control" />
+                    <span asp-validation-for="Proveedores.email" class="text-danger"></span>
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Proveedores.telefono" class="form-label"></label>
+                    <input asp-for="Proveedores.telefono" class="form-control" />
+                    <span asp-validation-for="Proveedores.telefono" class="text-danger"></span>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary "> Editar  Proveedores</button>
+            </form>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6 ">
+            <a asp-page="Index" class="btn btn-success"> Volver</a>
+        </div>
+
+    </div>
+</div>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
+

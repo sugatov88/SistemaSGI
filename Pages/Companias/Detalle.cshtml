@@ -1,0 +1,28 @@
+﻿@page
+@model SistemaSGI.Pages.Companias.DetalleModel
+@{
+    ViewData["Title"] = "Detalle Compania ";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="text-info">Detalle categoria: @Html.DisplayFor(m => m.Compania.Id)</h2>
+            <ul class="list-group">
+                <li class="list-group-item">ID : @Html.DisplayFor(m => m.Compania.Id)</li>
+                <li class="list-group-item">Compania : @Html.DisplayFor(m => m.Compania.nombre)</li>
+            
+            </ul>
+
+
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6 ">
+            <a asp-page="Index" class="btn btn-success"> Volver</a>
+        </div>
+
+    </div>
+</div>

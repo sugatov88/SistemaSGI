@@ -1,0 +1,66 @@
+﻿@page
+@model SistemaSGI.Pages.Administradores.CrearModel
+@{
+    ViewData["Title"] = "Crear Administrador";
+}
+
+  <div class="container">
+      <div class="row">
+          <div class="col-8 offset-2">
+              <div class="text-info">Crear Administrador</div>
+
+              <form method="post">
+                  <div class="mb-3">
+                      <label asp-for="Administrador.nombre" class="form-label"></label>
+                      <input asp-for="Administrador.nombre" class="form-control" />
+                      <span asp-validation-for="Administrador.nombre" class="text-danger"></span>
+
+                  </div>
+                  <div class="mb-3">
+                      <label asp-for="Administrador.apellido" class="form-label"></label>
+                      <input asp-for="Administrador.apellido" class="form-control" />
+                      <span asp-validation-for="Administrador.apellido" class="text-danger"></span>
+
+                  </div>
+                  <div class="mb-3">
+                      <label asp-for="Administrador.documento" class="form-label"></label>
+                      <input asp-for="Administrador.documento" class="form-control" />
+                      <span asp-validation-for="Administrador.documento" class="text-danger"></span>
+
+                  </div>
+                  <div class="mb-3">
+                      <label asp-for="Administrador.direccion" class="form-label"></label>
+                      <input asp-for="Administrador.direccion" class="form-control" />
+                      <span asp-validation-for="Administrador.direccion" class="text-danger"></span>
+
+                  </div>
+                  <div class="mb-3">
+                      <label asp-for="Administrador.email" class="form-label"></label>
+                      <input asp-for="Administrador.email" class="form-control" />
+                      <span asp-validation-for="Administrador.email" class="text-danger"></span>
+
+                  </div>
+                  <div class="mb-3">
+                      <label asp-for="Administrador.telefono" class="form-label"></label>
+                      <input asp-for="Administrador.telefono" class="form-control" />
+                      <span asp-validation-for="Administrador.telefono" class="text-danger"></span>
+
+                  </div>
+
+                  <button type="submit" class="btn btn-primary ">crear Administrador</button>
+              </form>
+          </div>
+
+      </div>
+      <div class="row">
+          <div class="col-6 ">
+              <a asp-page="Index" class="btn btn-success"> Volver</a>
+          </div>
+
+      </div>
+  </div>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
+

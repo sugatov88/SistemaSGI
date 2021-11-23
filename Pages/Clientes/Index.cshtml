@@ -1,0 +1,68 @@
+﻿@page
+@model SistemaSGI.Pages.Clientes.IndexModel
+@{
+    ViewData["Title"] = "Lista de Clientes";
+
+
+}
+<div class=" = " container">
+    <div class="row">
+        <div class=" = " col-9">
+            <h2 class=" text-info"> Lista de Clientes </h2>
+        </div>
+        <div class="col-3">
+            <a class="btn btn-secondary" asp-page="/Clientes/Crear">Crear nueva Administrador</a>
+        </div>
+        <br />
+        <br />
+        @if (Model.Clientes.Count() > 0)
+        {
+            <table id="tblClientes" class="table table-striped table-bordered" style="width: 100%;">
+                <thead>
+                    <tr>
+                        @*<th>@Html.DisplayFor(m => m.Clientes.FirstOrDefault().Id)</th>*@
+                        <th>Id </th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Documento</th>
+                        <th>Direccion </th>
+                        <th>Email</th>
+                        <th>Telefono </th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var Clientes in Model.Clientes)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(m => Clientes.Id)   </td>
+                            <td> @Html.DisplayFor(m => Clientes.nombre)   </td>
+                            <td>@Html.DisplayFor(m => Clientes.apellido)   </td>
+                            <td> @Html.DisplayFor(m => Clientes.documento)   </td>
+                            <td>@Html.DisplayFor(m => Clientes.direccion)   </td>
+                            <td> @Html.DisplayFor(m => Clientes.email)   </td>
+                            <td>@Html.DisplayFor(m => Clientes.telefono)   </td>
+
+                            <td>
+                                <a class="btn btn-success" asp-page="../Clientes/Detalle" asp-route-id="@Clientes.Id"> Detalles</a>
+                                <a class="btn btn-warning" asp-page="../Clientes/Editar" asp-route-id="@Clientes.Id"> Editar</a>
+                                <a class="btn btn-danger" asp-page="../Clientes/Eliminar" asp-route-id="@Clientes.Id"> Eliminar</a>
+
+
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+        }
+        else
+        {
+            <p> no hay Clientes</p>
+        }
+
+    </div>
+
+</div>

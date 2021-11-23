@@ -1,0 +1,33 @@
+﻿@page
+@model SistemaSGI.Pages.Companias.EliminarModel
+@{
+    ViewData["Title"] = "Eliminar Companias";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="text-info">Eliminar Compania</h2>
+
+            <form method="post">
+
+                <input type="hidden" asp-for="Compania.Id"/>
+                <div class="mb-3">
+                    <label asp-for="Compania.nombre" class="form-label"></label>
+                    <input asp-for="Compania.nombre" class="form-control" readonly/>
+                    <span asp-validation-for="Compania.nombre" class="text-danger"></span>
+
+                </div>
+                <button type="submit" class="btn btn-primary ">Eliminar Compania</button>
+            </form>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6 ">
+            <a asp-page="Index" class="btn btn-success"> Volver</a>
+        </div>
+
+    </div>
+</div>
+

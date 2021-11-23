@@ -1,0 +1,33 @@
+﻿@page
+@model SistemaSGI.Pages.Proveedoress.EliminarModel
+@{
+    ViewData["Title"] = "Eliminar Proveedoress";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="text-info">Eliminar ProveedoresProveedores</h2>
+
+            <form method="post">
+
+                <input type="hidden" asp-for="Proveedores.Id"/>
+                <div class="mb-3">
+                    <label asp-for="Proveedores.nombre" class="form-label"></label>
+                    <input asp-for="Proveedores.nombre" class="form-control" readonly/>
+                    <span asp-validation-for="Proveedores.nombre" class="text-danger"></span>
+
+                </div>
+                <button type="submit" class="btn btn-primary ">Eliminar Proveedores</button>
+            </form>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6 ">
+            <a asp-page="Index" class="btn btn-success"> Volver</a>
+        </div>
+
+    </div>
+</div>
+
