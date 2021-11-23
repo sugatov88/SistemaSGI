@@ -1,0 +1,2 @@
+# SistemaSGI
+# SistemaSGI  proyecto SENA
