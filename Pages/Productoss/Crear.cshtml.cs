@@ -32,6 +32,7 @@ namespace SistemaSGI.Pages.Productoss
             ProductosVm = new CrearProductoVm()
             {
                 ListaCategorias = await _contexto.Categoria.ToListAsync(),
+                ListaProvedores=await _contexto.Proveedores.ToListAsync(),
                 Productos=new Modelos.Productos()
 
 

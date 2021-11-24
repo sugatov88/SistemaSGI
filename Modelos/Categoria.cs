@@ -12,7 +12,7 @@ namespace SistemaSGI.Modelos
         public int Id { get; set; }
         
         [Required(ErrorMessage="Este campo es obligatorio")]
-        [Display(Name = "categoria")]
+        [Display(Name = "Categoria")]
         public string nombreCategoria { get; set; }
 
        

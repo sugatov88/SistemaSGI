@@ -22,7 +22,14 @@
                     <tr>
                         @*<th>@Html.DisplayFor(m => m.Productoss.FirstOrDefault().Id)</th>*@
                         <th>id </th>
-                        <th>Productos</th>
+                        <th>Nombre</th>
+                        <th>categoria </th>
+                        <th>unidades</th>
+                        <th>Precio </th>
+                        <th>Proveedor</th>
+                        <th>Marca </th>
+                        
+
 
                     </tr>
                 </thead>
@@ -32,12 +39,12 @@
                     <tr>
                         <td>@Html.DisplayFor(m => Productoss.Id)   </td>
                         <td> @Html.DisplayFor(m => Productoss.nombre)   </td>
-                        <td>@Html.DisplayFor(m => Productoss.categoriaId)   </td>
-                        <td> @Html.DisplayFor(m => Productoss.categoria)   </td>
+                      
+                        <td> @Html.DisplayFor(m => Productoss.categoria.nombreCategoria)   </td>
                         <td>@Html.DisplayFor(m => Productoss.unidades)   </td>
                         <td> @Html.DisplayFor(m => Productoss.precio)   </td>
-                        <td>@Html.DisplayFor(m => Productoss.proveedoresId)   </td>
-                        <td> @Html.DisplayFor(m => Productoss._proveedor)   </td>
+                   
+                        <td> @Html.DisplayFor(m => Productoss._proveedor.nombre)   </td>
                         <td> @Html.DisplayFor(m => Productoss.marca)   </td>
 
                         <td>
@@ -56,7 +63,7 @@
         }
         else
         {
-            <p> no hay Productoss</p>
+            <p> no hay Productos</p>
         }
 
     </div>

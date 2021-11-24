@@ -7,26 +7,30 @@ namespace SistemaSGI.Modelos
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+       
 
         public string nombre { get; set; }
-        [Required]
+       
         public int categoriaId {get;set;}
-        [Required]
+       
+
+        [Display(Name = "Categoria")]
         public Categoria categoria { get; set; }
-        [Required]
+       
 
         public int unidades { get; set; }
-        [Required]
+       
 
         public int precio { get; set; }
-        [Required]
+       
 
         public int proveedoresId { get; set; }
-        [Required]
+       
 
+
+        [Display(Name = "Proveedor")]
         public Proveedores _proveedor { get; set; }
-        [Required]
+       
 
         public string marca { get; set; }
 

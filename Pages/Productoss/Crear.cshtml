@@ -19,11 +19,36 @@
                   <div class="mb-3">
                       <label asp-for="ProductosVm.Productos.categoria" class="form-label"></label>
                       <select asp-for="ProductosVm.Productos.categoriaId"
-                              asp-items="@(new SelectList(Model.ProductosVm.ListaCategorias,"Id","nombreCategoria") )"class="form-control"></select>
+                              asp-items="@(new SelectList(Model.ProductosVm.ListaCategorias,"Id","nombreCategoria") )" class="form-control"></select>
                       <span asp-validation-for="ProductosVm.Productos.categoria.nombreCategoria" class="text-danger"></span>
 
                   </div>
-       
+                  <div class="mb-3">
+                      <label asp-for="ProductosVm.Productos.unidades" class="form-label"></label>
+                      <input asp-for="ProductosVm.Productos.unidades" class="form-control" />
+                      <span asp-validation-for="ProductosVm.Productos.unidades" class="text-danger"></span>
+
+                  </div>
+                  <div class="mb-3">
+                      <label asp-for="ProductosVm.Productos.precio" class="form-label"></label>
+                      <input asp-for="ProductosVm.Productos.precio" class="form-control" />
+                      <span asp-validation-for="ProductosVm.Productos.precio" class="text-danger"></span>
+
+                  </div>
+                  <div class="mb-3">
+                      <label asp-for="ProductosVm.Productos._proveedor" class="form-label"></label>
+                      <select asp-for="ProductosVm.Productos.proveedoresId"
+                              asp-items="@(new SelectList(Model.ProductosVm.ListaProvedores,"Id","nombre") )"class="form-control"></select>
+                      <span asp-validation-for="ProductosVm.Productos.categoria.nombreCategoria" class="text-danger"></span>
+
+                  </div>
+                  <div class="mb-3">
+                      <label asp-for="ProductosVm.Productos.marca" class="form-label"></label>
+                      <input asp-for="ProductosVm.Productos.marca" class="form-control" />
+                      <span asp-validation-for="ProductosVm.Productos.marca" class="text-danger"></span>
+
+                  </div>
+
                   <button type="submit" class="btn btn-primary "> crear Productos</button>
               </form>
           </div>
