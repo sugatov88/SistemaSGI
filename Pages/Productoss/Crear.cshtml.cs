@@ -23,10 +23,11 @@ namespace SistemaSGI.Pages.Productoss
         }
 
         [BindProperty]
-        public Productos Productos { get; set; }
-        [BindProperty]
         public CrearProductoVm ProductosVm { get; set; }
-        public async Task<IActionResult> OnGet()
+
+
+
+        public async Task <IActionResult> OnGet()
         {
             ProductosVm = new CrearProductoVm()
             {
@@ -45,7 +46,7 @@ namespace SistemaSGI.Pages.Productoss
         {
             if (ModelState.IsValid)
             {
-                await _contexto.Productos.AddAsync(Productos);
+                await _contexto.Productos.AddAsync(ProductosVm.Productos);
                 await _contexto.SaveChangesAsync();
                 return RedirectToPage("Index");
             }
