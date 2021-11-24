@@ -1,0 +1,42 @@
+﻿@page
+@model SistemaSGI.Pages.Productoss.CrearModel
+@{
+    ViewData["Title"] = "Crear Productoss";
+}
+
+  <div class="container">
+      <div class="row">
+          <div class="col-8 offset-2">
+              <div class="text-info">Crear una nueva Productos</div>
+
+              <form method="post">
+                  <div class="mb-3">
+                      <label asp-for="ProductosVm.Productos.nombre" class="form-label"></label>
+                      <input asp-for="ProductosVm.Productos.nombre" class="form-control" />
+                      <span asp-validation-for="ProductosVm.Productos.nombre" class="text-danger"></span>
+
+                  </div>
+                  <div class="mb-3">
+                      <label asp-for="ProductosVm.Productos.categoria" class="form-label"></label>
+                      <select asp-for="ProductosVm.Productos.categoriaId" asp-items="@(new SelectList(Model.ProductosVm.ListaCategorias,"Id","Nombre") )"class="form-control"/>
+                      <span asp-validation-for="ProductosVm.Productos.categoria" class="text-danger"></span>
+
+                  </div>
+       
+                  <button type="submit" class="btn btn-primary "> crear Productos</button>
+              </form>
+          </div>
+
+      </div>
+      <div class="row">
+          <div class="col-6 ">
+              <a asp-page="Index" class="btn btn-success"> Volver</a>
+          </div>
+
+      </div>
+  </div>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
+

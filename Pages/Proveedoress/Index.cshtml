@@ -11,7 +11,7 @@
             <h2 class=" text-info"> Lista de Proveedoress </h2>
         </div>
         <div class="col-3">
-            <a class="btn btn-secondary" asp-page="/Proveedoress/Crear">Crear nueva Administrador</a>
+            <a class="btn btn-secondary" asp-page="/Proveedoress/Crear">Crear nuevo proveedor</a>
         </div>
         <br />
         <br />
@@ -20,11 +20,12 @@
             <table id="tblProveedoress" class="table table-striped table-bordered" style="width: 100%;">
                 <thead>
                     <tr>
-                        
+                        @*<th>@Html.DisplayFor(m => m.Proveedoress.FirstOrDefault().Id)</th>*@
                         <th>Id </th>
                         <th>Nombre</th>
                         <th>Direccion </th>
                         <th>Email</th>
+                        <th>Sitio web</th>
                         <th>Telefono </th>
 
 
@@ -33,22 +34,22 @@
                 <tbody>
                     @foreach (var Proveedoress in Model.Proveedoress)
                     {
-                        <tr>
-                            <td>@Html.DisplayFor(m => Proveedoress.Id)   </td>
-                            <td> @Html.DisplayFor(m => Proveedoress.nombre)   </td>
-                          
-                            <td>@Html.DisplayFor(m => Proveedoress.direccion)   </td>
-                            <td> @Html.DisplayFor(m => Proveedoress.email)   </td>
-                            <td>@Html.DisplayFor(m => Proveedoress.telefono)   </td>
+                    <tr>
+                        <td>@Html.DisplayFor(m => Proveedoress.Id)   </td>
+                        <td> @Html.DisplayFor(m => Proveedoress.nombre)   </td>
+                        <td>@Html.DisplayFor(m => Proveedoress.direccion)   </td>
+                        <td> @Html.DisplayFor(m => Proveedoress.email)   </td>
+                        <td> @Html.DisplayFor(m => Proveedoress.web)   </td>
+                        <td>@Html.DisplayFor(m => Proveedoress.telefono)   </td>
 
-                            <td>
-                                <a class="btn btn-success" asp-page="../Proveedoress/Detalle" asp-route-id="@Proveedoress.Id"> Detalles</a>
-                                <a class="btn btn-warning" asp-page="../Proveedoress/Editar" asp-route-id="@Proveedoress.Id"> Editar</a>
-                                <a class="btn btn-danger" asp-page="../Proveedoress/Eliminar" asp-route-id="@Proveedoress.Id"> Eliminar</a>
+                        <td>
+                            <a class="btn btn-success" asp-page="../Proveedoress/Detalle" asp-route-id="@Proveedoress.Id"> Detalles</a>
+                            <a class="btn btn-warning" asp-page="../Proveedoress/Editar" asp-route-id="@Proveedoress.Id"> Editar</a>
+                            <a class="btn btn-danger" asp-page="../Proveedoress/Eliminar" asp-route-id="@Proveedoress.Id"> Eliminar</a>
 
 
-                            </td>
-                        </tr>
+                        </td>
+                    </tr>
                     }
 
                 </tbody>

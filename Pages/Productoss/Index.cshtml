@@ -1,0 +1,64 @@
+﻿@page
+@model SistemaSGI.Pages.Productoss.IndexModel
+@{
+    ViewData["Title"] = "Lista de Productoss";
+
+
+}
+<div class=" = " container">
+    <div class="row">
+        <div class=" = " col-9">
+            <h2 class=" text-info"> Lista de Productoss </h2>
+        </div>
+        <div class="col-3">
+            <a class="btn btn-secondary" asp-page="/Productoss/Crear">Crear nueva Productos</a>
+        </div>
+        <br />
+        <br />
+        @if (Model.Productoss.Count() > 0)
+        {
+            <table id="tblProductoss" class="table table-striped table-bordered" style="width: 100%;">
+                <thead>
+                    <tr>
+                        @*<th>@Html.DisplayFor(m => m.Productoss.FirstOrDefault().Id)</th>*@
+                        <th>id </th>
+                        <th>Productos</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var Productoss in Model.Productoss)
+                    {
+                    <tr>
+                        <td>@Html.DisplayFor(m => Productoss.Id)   </td>
+                        <td> @Html.DisplayFor(m => Productoss.nombre)   </td>
+                        <td>@Html.DisplayFor(m => Productoss.categoriaId)   </td>
+                        <td> @Html.DisplayFor(m => Productoss.categoria)   </td>
+                        <td>@Html.DisplayFor(m => Productoss.unidades)   </td>
+                        <td> @Html.DisplayFor(m => Productoss.precio)   </td>
+                        <td>@Html.DisplayFor(m => Productoss.proveedoresId)   </td>
+                        <td> @Html.DisplayFor(m => Productoss._proveedor)   </td>
+                        <td> @Html.DisplayFor(m => Productoss.marca)   </td>
+
+                        <td>
+                            <a class="btn btn-success" asp-page="../Productoss/Detalle" asp-route-id="@Productoss.Id"> Detalles</a>
+                            <a class="btn btn-warning" asp-page="../Productoss/Editar" asp-route-id="@Productoss.Id"> Editar</a>
+                            <a class="btn btn-danger" asp-page="../Productoss/Eliminar" asp-route-id="@Productoss.Id"> Eliminar</a>
+
+
+                        </td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+
+        }
+        else
+        {
+            <p> no hay Productoss</p>
+        }
+
+    </div>
+
+</div>

@@ -388,7 +388,6 @@ C:\Users\DELL\Documents\SENA\SistemaSGI\SistemaSGI\bin\Debug\net5.0\runtimes\win
 C:\Users\DELL\Documents\SENA\SistemaSGI\SistemaSGI\obj\Debug\net5.0\Razor\Pages\Categorias\Index.cshtml.g.cs
 C:\Users\DELL\Documents\SENA\SistemaSGI\SistemaSGI\obj\Debug\net5.0\Razor\Pages\FormaPago\Index.cshtml.g.cs
 C:\Users\DELL\Documents\SENA\SistemaSGI\SistemaSGI\obj\Debug\net5.0\Razor\Pages\Inventario\Index.cshtml.g.cs
-C:\Users\DELL\Documents\SENA\SistemaSGI\SistemaSGI\obj\Debug\net5.0\Razor\Pages\Productos\Index.cshtml.g.cs
 C:\Users\DELL\Documents\SENA\SistemaSGI\SistemaSGI\obj\Debug\net5.0\Razor\Pages\Categorias\Crear.cshtml.g.cs
 C:\Users\DELL\Documents\SENA\SistemaSGI\SistemaSGI\obj\Debug\net5.0\Razor\Pages\Categorias\Editar.cshtml.g.cs
 C:\Users\DELL\Documents\SENA\SistemaSGI\SistemaSGI\obj\Debug\net5.0\Razor\Pages\Categorias\Detalle.cshtml.g.cs
@@ -413,3 +412,5 @@ C:\Users\DELL\Documents\SENA\SistemaSGI\SistemaSGI\obj\Debug\net5.0\Razor\Pages\
 C:\Users\DELL\Documents\SENA\SistemaSGI\SistemaSGI\obj\Debug\net5.0\Razor\Pages\Proveedoress\Editar.cshtml.g.cs
 C:\Users\DELL\Documents\SENA\SistemaSGI\SistemaSGI\obj\Debug\net5.0\Razor\Pages\Proveedoress\Eliminar.cshtml.g.cs
 C:\Users\DELL\Documents\SENA\SistemaSGI\SistemaSGI\obj\Debug\net5.0\Razor\Pages\Proveedoress\Index.cshtml.g.cs
+C:\Users\DELL\Documents\SENA\SistemaSGI\SistemaSGI\obj\Debug\net5.0\Razor\Pages\Productoss\Index.cshtml.g.cs
+C:\Users\DELL\Documents\SENA\SistemaSGI\SistemaSGI\obj\Debug\net5.0\Razor\Pages\Productoss\Crear.cshtml.g.cs
