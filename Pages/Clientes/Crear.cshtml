@@ -4,63 +4,62 @@
     ViewData["Title"] = "Crear Cliente";
 }
 
-  <div class="container">
-      <div class="row">
-          <div class="col-8 offset-2">
-              <div class="text-info">Agregar Cliente</div>
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="text-info">Agregar Cliente</div>
 
-              <form method="post">
-                  <div class="mb-3">
-                      <label asp-for="Cliente.Nombre" class="form-label"></label>
-                      <input asp-for="Cliente.Nombre" class="form-control" />
-                      <span asp-validation-for="Cliente.Nombre" class="text-danger"></span>
+            <form method="post">
+                <div class="mb-3">
+                    <label asp-for="Cliente.Nombre" class="form-label"></label>
+                    <input asp-for="Cliente.Nombre" class="form-control" />
+                    <span asp-validation-for="Cliente.Nombre" class="text-danger"></span>
 
-                  </div>
-                  <div class="mb-3">
-                      <label asp-for="Cliente.Apellido" class="form-label"></label>
-                      <input asp-for="Cliente.Apellido" class="form-control" />
-                      <span asp-validation-for="Cliente.Apellido" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Cliente.Apellido" class="form-label"></label>
+                    <input asp-for="Cliente.Apellido" class="form-control" />
+                    <span asp-validation-for="Cliente.Apellido" class="text-danger"></span>
 
-                  </div>
-                  <div class="mb-3">
-                      <label asp-for="Cliente.Documento" class="form-label"></label>
-                      <input asp-for="Cliente.Documento" class="form-control" />
-                      <span asp-validation-for="Cliente.Documento" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Cliente.Documento" class="form-label"></label>
+                    <input asp-for="Cliente.Documento" class="form-control" />
+                    <span asp-validation-for="Cliente.Documento" class="text-danger"></span>
 
-                  </div>
-                  <div class="mb-3">
-                      <label asp-for="Cliente.Direccion" class="form-label"></label>
-                      <input asp-for="Cliente.Direccion" class="form-control" />
-                      <span asp-validation-for="Cliente.Direccion" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Cliente.Direccion" class="form-label"></label>
+                    <input asp-for="Cliente.Direccion" class="form-control" />
+                    <span asp-validation-for="Cliente.Direccion" class="text-danger"></span>
 
-                  </div>
-                  <div class="mb-3">
-                      <label asp-for="Cliente.Email" class="form-label"></label>
-                      <input asp-for="Cliente.Email" class="form-control" />
-                      <span asp-validation-for="Cliente.Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Cliente.Email" class="form-label"></label>
+                    <input asp-for="Cliente.Email" class="form-control" />
+                    <span asp-validation-for="Cliente.Email" class="text-danger"></span>
 
-                  </div>
-                  <div class="mb-3">
-                      <label asp-for="Cliente.Telefono" class="form-label"></label>
-                      <input asp-for="Cliente.Telefono" class="form-control" />
-                      <span asp-validation-for="Cliente.Telefono" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Cliente.Telefono" class="form-label"></label>
+                    <input asp-for="Cliente.Telefono" class="form-control" />
+                    <span asp-validation-for="Cliente.Telefono" class="text-danger"></span>
 
-                  </div>
+                </div>
 
-                  <button type="submit" class="btn btn-primary "> Guaradr cambios  Cliente</button>
-              </form>
-          </div>
+                <button type="submit" class="btn btn-primary "> Guaradr cambios  Cliente</button>
+            </form>
+        </div>
 
-      </div>
-      <div class="row">
-          <div class="col-6 ">
-              <a asp-page="Index" class="btn btn-success"> Volver</a>
-          </div>
+    </div>
+    <div class="row">
+        <div class="col-6 ">
+            <a asp-page="Index" class="btn btn-success"> Volver</a>
+        </div>
 
-      </div>
-  </div>
+    </div>
+</div>
 @section Scripts
 {
     <partial name="_ValidationScriptsPartial" />
 }
-

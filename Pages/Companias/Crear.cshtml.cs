@@ -11,8 +11,8 @@ namespace SistemaSGI.Pages.Companias
 {
     public class CrearModel : PageModel
     {
-          
-    
+
+
         private readonly ApplicationDbContext _contexto;
 
         public CrearModel(ApplicationDbContext contexto)
@@ -25,7 +25,7 @@ namespace SistemaSGI.Pages.Companias
         public void OnGet()
         {
         }
-        public async Task <IActionResult> OnPost()
+        public async Task<IActionResult> OnPost()
         {
             if (ModelState.IsValid)
             {
