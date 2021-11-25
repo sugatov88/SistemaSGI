@@ -1,48 +1,48 @@
 ﻿@page
 @model SistemaSGI.Pages.Proveedoress.EditarModel
 @{
-    ViewData["Title"] = "Editar Proveedoress";
+    ViewData["Title"] = "Editar Proveedores";
 }
 
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
-            <h2 class="text-info">Editar Proveedores</h2>
+            <h2 class="text-info">Editar Proveedor</h2>
 
             <form method="post">
                 <div class="mb-3">
-                    <label asp-for="Proveedores.nombre" class="form-label"></label>
-                    <input asp-for="Proveedores.nombre" class="form-control" />
-                    <span asp-validation-for="Proveedores.nombre" class="text-danger"></span>
+                    <label asp-for="Proveedores.Nombre" class="form-label"></label>
+                    <input asp-for="Proveedores.Nombre" class="form-control" />
+                    <span asp-validation-for="Proveedores.Nombre" class="text-danger"></span>
 
                 </div>
 
                 <div class="mb-3">
-                    <label asp-for="Proveedores.direccion" class="form-label"></label>
-                    <input asp-for="Proveedores.direccion" class="form-control" />
-                    <span asp-validation-for="Proveedores.direccion" class="text-danger"></span>
+                    <label asp-for="Proveedores.Direccion" class="form-label"></label>
+                    <input asp-for="Proveedores.Direccion" class="form-control" />
+                    <span asp-validation-for="Proveedores.Direccion" class="text-danger"></span>
 
                 </div>
                 <div class="mb-3">
-                    <label asp-for="Proveedores.email" class="form-label"></label>
-                    <input asp-for="Proveedores.email" class="form-control" />
-                    <span asp-validation-for="Proveedores.email" class="text-danger"></span>
+                    <label asp-for="Proveedores.Email" class="form-label"></label>
+                    <input asp-for="Proveedores.Email" class="form-control" />
+                    <span asp-validation-for="Proveedores.Email" class="text-danger"></span>
 
                 </div>
                 <div class="mb-3">
-                    <label asp-for="Proveedores.web" class="form-label"></label>
-                    <input asp-for="Proveedores.web" class="form-control" />
-                    <span asp-validation-for="Proveedores.web" class="text-danger"></span>
+                    <label asp-for="Proveedores.Web" class="form-label"></label>
+                    <input asp-for="Proveedores.Web" class="form-control" />
+                    <span asp-validation-for="Proveedores.Web" class="text-danger"></span>
 
                 </div>
                 <div class="mb-3">
-                    <label asp-for="Proveedores.telefono" class="form-label"></label>
-                    <input asp-for="Proveedores.telefono" class="form-control" />
-                    <span asp-validation-for="Proveedores.telefono" class="text-danger"></span>
+                    <label asp-for="Proveedores.Telefono" class="form-label"></label>
+                    <input asp-for="Proveedores.Telefono" class="form-control" />
+                    <span asp-validation-for="Proveedores.Telefono" class="text-danger"></span>
 
                 </div>
 
-                <button type="submit" class="btn btn-primary "> Editar  Proveedores</button>
+                <button type="submit" class="btn btn-primary "> Guardar cambios</button>
             </form>
         </div>
 

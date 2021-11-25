@@ -25,7 +25,7 @@ namespace SistemaSGI.Pages.Productoss
 
         public async Task OnGet()
         {
-            Productoss = await _contexto.Productos.Include(c=>c.categoria).ToListAsync();
+            Productoss = await _contexto.Productos.Include(c=>c.Categoria).ToListAsync();
             Productoss = await _contexto.Productos.Include(c => c._proveedor).ToListAsync();
         }
 

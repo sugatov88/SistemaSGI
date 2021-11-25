@@ -162,12 +162,12 @@ namespace SistemaSGI.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Productos_categoriaId",
                 table: "Productos",
-                column: "categoriaId");
+                column: "CategoriaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Productos_proveedoresId",
                 table: "Productos",
-                column: "proveedoresId");
+                column: "ProveedoresId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

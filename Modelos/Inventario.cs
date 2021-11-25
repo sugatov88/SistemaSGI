@@ -7,14 +7,14 @@ namespace SistemaSGI.Modelos
     {
         [Key]
         public int Id { get; set; }
-        [Required]
 
+        [Display(Name = "Producto")]
         public int productosId {  get; set; }
-        [Required]
+        
         public Productos  productos { get; set; }
-        [Required]
+        [Display(Name= "Codigo")]
         public string codigo { get; set; }
-        [Required]
+        [Display(Name= "Stock")]
         public string stock { get; set; }
 
        

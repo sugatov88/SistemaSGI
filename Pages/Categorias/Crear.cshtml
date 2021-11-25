@@ -1,22 +1,22 @@
 ﻿@page
 @model SistemaSGI.Pages.Categorias.CrearModel
 @{
-    ViewData["Title"] = "Crear categorias";
+    ViewData["Title"] = "Crear Categoria";
 }
 
   <div class="container">
       <div class="row">
           <div class="col-8 offset-2">
-              <div class="text-info">Crear una nueva categoria</div>
+              <div class="text-info">Agregar categoria</div>
 
               <form method="post">
                   <div class="mb-3">
-                      <label asp-for="Categoria.nombreCategoria" class="form-label"></label>
-                      <input asp-for="Categoria.nombreCategoria" class="form-control"/>
-                      <span asp-validation-for="Categoria.nombreCategoria"class="text-danger"></span>
+                      <label asp-for="Categoria.NombreCategoria" class="form-label"></label>
+                      <input asp-for="Categoria.NombreCategoria" class="form-control"/>
+                      <span asp-validation-for="Categoria.NombreCategoria"class="text-danger"></span>
 
                   </div>
-                  <button type="submit" class="btn btn-primary "> crear categoria</button>
+                  <button type="submit" class="btn btn-primary "> Guardar</button>
               </form>
           </div>
 

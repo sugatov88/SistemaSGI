@@ -36,7 +36,7 @@ namespace SistemaSGI.Pages.Proveedoress
 
             {
                 var ProveedoresDesdeDb = await _contexto.Proveedores.FindAsync(Proveedores.Id);
-                ProveedoresDesdeDb.nombre = Proveedores.nombre;
+                ProveedoresDesdeDb.Nombre = Proveedores.Nombre;
                 await _contexto.SaveChangesAsync();
                 return RedirectToPage("Index");
             }

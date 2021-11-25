@@ -41,7 +41,7 @@ namespace SistemaSGI.Pages.Categorias
                     return NotFound();
                 }
                 _contexto.Categoria.Remove(CategoriaDesdeDb);
-                CategoriaDesdeDb.nombreCategoria = Categoria.nombreCategoria;
+                CategoriaDesdeDb.NombreCategoria = Categoria.NombreCategoria;
                
                 await _contexto.SaveChangesAsync();
                 return RedirectToPage("Index");

@@ -37,7 +37,7 @@ namespace SistemaSGI.Pages.Categorias
             {
                 var CategoriaDesdeDb = await _contexto.Categoria.FindAsync(Categoria.Id);
 
-                CategoriaDesdeDb.nombreCategoria = Categoria.nombreCategoria;
+                CategoriaDesdeDb.NombreCategoria = Categoria.NombreCategoria;
                
                 await _contexto.SaveChangesAsync();
                 return RedirectToPage("Index");

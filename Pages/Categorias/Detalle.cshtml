@@ -1,16 +1,16 @@
 ﻿@page
 @model SistemaSGI.Pages.Categorias.DetalleModel
 @{
-    ViewData["Title"] = "Detalle categoria ";
+    ViewData["Title"] = "Detalles ";
 }
 
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
-            <h2 class="text-info">Detalle categoria: @Html.DisplayFor(m => m.Categoria.Id)</h2>
+            <h2 class="text-info">Detalles </h2>
             <ul class="list-group">
                 <li class="list-group-item">ID : @Html.DisplayFor(m => m.Categoria.Id)</li>
-                <li class="list-group-item">Categoria : @Html.DisplayFor(m => m.Categoria.nombreCategoria)</li>
+                <li class="list-group-item">Categoria : @Html.DisplayFor(m => m.Categoria.NombreCategoria)</li>
             
             </ul>
 

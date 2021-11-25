@@ -1,17 +1,17 @@
 ﻿@page
 @model SistemaSGI.Pages.Categorias.IndexModel
 @{
-    ViewData["Title"] = "Lista de Categorias";
+    ViewData["Title"] = "Categorias";
 
 
 }
 <div class=" = "container">
     <div class="row">
         <div class=" = "col-9">
-            <h2 class=" text-info"> Lista de categorias </h2>
+            <h2 class=" text-info">categorias </h2>
         </div>
         <div class ="col-3">
-            <a class="btn btn-secondary" asp-page="/Categorias/Crear">Crear nueva categoria</a>
+            <a class="btn btn-secondary" asp-page="/Categorias/Crear">Agregar nuevo</a>
         </div>
         <br />
         <br />
@@ -31,7 +31,7 @@
             {
             <tr>                               
                 <td>@Html.DisplayFor(m=>categorias.Id)   </td>
-                <td> @Html.DisplayFor(m => categorias.nombreCategoria)   </td>
+                <td> @Html.DisplayFor(m => categorias.NombreCategoria)   </td>
                 <td>
                     <a class="btn btn-success" asp-page="../Categorias/Detalle" asp-route-id="@categorias.Id"> Detalles</a>
                     <a class="btn btn-warning" asp-page="../Categorias/Editar" asp-route-id="@categorias.Id"> Editar</a>

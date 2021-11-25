@@ -1,24 +1,24 @@
 ﻿@page
 @model SistemaSGI.Pages.Administradores.EliminarModel
 @{
-    ViewData["Title"] = "Eliminar Administradores";
+    ViewData["Title"] = "Eliminar Administrador";
 }
 
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
-            <h2 class="text-info">Eliminar AdministradorAdministrador</h2>
+            <h2 class="text-info">Eliminar Administrador</h2>
 
             <form method="post">
 
                 <input type="hidden" asp-for="Administrador.Id"/>
                 <div class="mb-3">
-                    <label asp-for="Administrador.nombre" class="form-label"></label>
-                    <input asp-for="Administrador.nombre" class="form-control" readonly/>
-                    <span asp-validation-for="Administrador.nombre" class="text-danger"></span>
+                    <label asp-for="Administrador.Nombre" class="form-label"></label>
+                    <input asp-for="Administrador.Nombre" class="form-control" readonly/>
+                    <span asp-validation-for="Administrador.Nombre" class="text-danger"></span>
 
                 </div>
-                <button type="submit" class="btn btn-primary ">Eliminar Administrador</button>
+                <button type="submit" class="btn btn-primary ">Eliminar </button>
             </form>
         </div>
 

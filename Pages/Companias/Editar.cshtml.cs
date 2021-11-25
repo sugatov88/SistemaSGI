@@ -37,8 +37,13 @@ namespace SistemaSGI.Pages.Companias
             {
                 var CompaniaDesdeDb = await _contexto.Compania.FindAsync(Compania.Id);
 
-                CompaniaDesdeDb.nombre = Compania.nombre;
-               
+                CompaniaDesdeDb.Nit = Compania.Nit;
+                CompaniaDesdeDb.Nombre = Compania.Nombre;
+                CompaniaDesdeDb.Direccion = Compania.Direccion;
+                CompaniaDesdeDb.Email = Compania.Email;
+                CompaniaDesdeDb.Web = Compania.Web;
+                CompaniaDesdeDb.Telefono = Compania.Telefono;
+
                 await _contexto.SaveChangesAsync();
                 return RedirectToPage("Index");
             }

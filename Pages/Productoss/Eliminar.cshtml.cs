@@ -7,11 +7,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SistemaSGI.Datos;
 using SistemaSGI.Modelos;
+using SistemaSGI.Modelos.ViewModels;
 
-namespace SistemaSGI.Pages.Companias
+namespace SistemaSGI.Pages.Productoss
 {
     public class EliminarModel : PageModel
     {
+
+
         private readonly ApplicationDbContext _contexto;
 
         public EliminarModel(ApplicationDbContext contexto)
@@ -20,33 +23,44 @@ namespace SistemaSGI.Pages.Companias
         }
 
         [BindProperty]
-        public Compania Compania { get; set; }
-        
-        
-    
-        public async void OnGet(int id)
-            {
+        public CrearProductoVm ProductosVm { get; set; }
 
-            Compania = await _contexto.Compania.FindAsync(id);
-            }
+
+
+        public async Task<IActionResult> OnGet(int id)
+        {
+            ProductosVm = new CrearProductoVm()
+            {
+                ListaCategorias = await _contexto.Categoria.ToListAsync(),
+                ListaProvedores = await _contexto.Proveedores.ToListAsync(),
+                Productos = await _contexto.Productos.FindAsync(id)
+
+
+
+
+            };
+            return Page();
+
+        }
 
         public async Task<IActionResult> OnPost()
         {
-          
+
 
             {
-                var CompaniaDesdeDb = await _contexto.Compania.FindAsync(Compania.Id);
-                if(CompaniaDesdeDb== null)
+                var productos = await _contexto.Productos.FindAsync(ProductosVm.Productos.Id);
+                if (productos == null)
                 {
                     return NotFound();
                 }
-                _contexto.Compania.Remove(CompaniaDesdeDb);
-                CompaniaDesdeDb.Nombre = Compania.Nombre;
-               
+
+                _contexto.Productos.Remove(productos);
+                
+
                 await _contexto.SaveChangesAsync();
                 return RedirectToPage("Index");
             }
-           
+
         }
     }
 }

@@ -7,18 +7,18 @@
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
-            <h2 class="text-info">Eliminar ClienteCliente</h2>
+            <h2 class="text-info">Eliminar Cliente</h2>
 
             <form method="post">
 
                 <input type="hidden" asp-for="Cliente.Id"/>
                 <div class="mb-3">
-                    <label asp-for="Cliente.nombre" class="form-label"></label>
-                    <input asp-for="Cliente.nombre" class="form-control" readonly/>
-                    <span asp-validation-for="Cliente.nombre" class="text-danger"></span>
+                    <label asp-for="Cliente.Nombre" class="form-label"></label>
+                    <input asp-for="Cliente.Nombre" class="form-control" readonly/>
+                    <span asp-validation-for="Cliente.Nombre" class="text-danger"></span>
 
                 </div>
-                <button type="submit" class="btn btn-primary ">Eliminar Cliente</button>
+                <button type="submit" class="btn btn-primary ">Eliminar </button>
             </form>
         </div>
 

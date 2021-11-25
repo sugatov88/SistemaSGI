@@ -7,18 +7,18 @@
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
-            <h2 class="text-info">Eliminar Categoriacategoria</h2>
+            <h2 class="text-info">Eliminar Categoria</h2>
 
             <form method="post">
 
                 <input type="hidden" asp-for="Categoria.Id"/>
                 <div class="mb-3">
-                    <label asp-for="Categoria.nombreCategoria" class="form-label"></label>
-                    <input asp-for="Categoria.nombreCategoria" class="form-control" readonly/>
-                    <span asp-validation-for="Categoria.nombreCategoria" class="text-danger"></span>
+                    <label asp-for="Categoria.NombreCategoria" class="form-label"></label>
+                    <input asp-for="Categoria.NombreCategoria" class="form-control" readonly/>
+                    <span asp-validation-for="Categoria.NombreCategoria" class="text-danger"></span>
 
                 </div>
-                <button type="submit" class="btn btn-primary ">Eliminar categoria</button>
+                <button type="submit" class="btn btn-primary ">Eliminar</button>
             </form>
         </div>
 

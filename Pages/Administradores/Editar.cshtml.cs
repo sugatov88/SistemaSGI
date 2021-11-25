@@ -37,8 +37,13 @@ namespace SistemaSGI.Pages.Administradores
             {
                 var AdministradorDesdeDb = await _contexto.Administrador.FindAsync(Administrador.Id);
 
-                AdministradorDesdeDb.nombre = Administrador.nombre;
-               
+                AdministradorDesdeDb.Nombre = Administrador.Nombre;
+                AdministradorDesdeDb.Apellido = Administrador.Apellido;
+                AdministradorDesdeDb.Documento = Administrador.Documento;
+                AdministradorDesdeDb.Direccion = Administrador.Direccion;
+                AdministradorDesdeDb.Email = Administrador.Email;
+                AdministradorDesdeDb.Telefono = Administrador.Telefono;
+
                 await _contexto.SaveChangesAsync();
                 return RedirectToPage("Index");
             }

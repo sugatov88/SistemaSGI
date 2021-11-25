@@ -41,7 +41,7 @@ namespace SistemaSGI.Pages.Proveedoress
                     return NotFound();
                 }
                 _contexto.Proveedores.Remove(ProveedoresDesdeDb);
-                ProveedoresDesdeDb.nombre = Proveedores.nombre;
+                ProveedoresDesdeDb.Nombre = Proveedores.Nombre;
                
                 await _contexto.SaveChangesAsync();
                 return RedirectToPage("Index");

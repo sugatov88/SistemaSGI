@@ -1,0 +1,33 @@
+﻿@page
+@model SistemaSGI.Pages.Productoss.DetalleModel
+@{
+    ViewData["Title"] = "Detalle  ";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="text-info">Detalle Productos: @Html.DisplayFor(m => m.Productos.Id)</h2>
+            <ul class="list-group">
+                <li class="list-group-item">ID : @Html.DisplayFor(m => m.Productos.Id)</li>
+                <li class="list-group-item">Nombre : @Html.DisplayFor(m => m.Productos.Nombre)</li>
+                <li class="list-group-item">Categoria : @Html.DisplayFor(m => m.Productos.Categoria.NombreCategoria)</li>
+                <li class="list-group-item">Unidades : @Html.DisplayFor(m => m.Productos.Unidades)</li>
+                <li class="list-group-item">Precio : @Html.DisplayFor(m => m.Productos.Precio)</li>
+                <li class="list-group-item">Proveedor : @Html.DisplayFor(m => m.Productos._proveedor.Nombre)</li>
+                <li class="list-group-item">Marca : @Html.DisplayFor(m => m.Productos.Marca)</li>
+
+            </ul>
+
+
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6 ">
+            <a asp-page="Index" class="btn btn-success"> Volver</a>
+        </div>
+
+    </div>
+</div>

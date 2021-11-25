@@ -25,27 +25,27 @@ namespace SistemaSGI.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("apellido")
+                    b.Property<string>("Apellido")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("direccion")
+                    b.Property<string>("Direccion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("documento")
+                    b.Property<string>("Documento")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("email")
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("nombre")
+                    b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("telefono")
+                    b.Property<string>("Telefono")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -61,7 +61,7 @@ namespace SistemaSGI.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("nombreCategoria")
+                    b.Property<string>("NombreCategoria")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -77,27 +77,27 @@ namespace SistemaSGI.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("apellido")
+                    b.Property<string>("Apellido")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("direccion")
+                    b.Property<string>("Direccion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("documento")
+                    b.Property<string>("Documento")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("email")
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("nombre")
+                    b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("telefono")
+                    b.Property<string>("Telefono")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -113,27 +113,27 @@ namespace SistemaSGI.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("direccion")
+                    b.Property<string>("Direccion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("email")
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("nit")
+                    b.Property<string>("Nit")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("nombre")
+                    b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("telefono")
+                    b.Property<string>("Telefono")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("web")
+                    b.Property<string>("Web")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -190,31 +190,31 @@ namespace SistemaSGI.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("categoriaId")
+                    b.Property<int>("CategoriaId")
                         .HasColumnType("int");
 
-                    b.Property<string>("marca")
+                    b.Property<string>("Marca")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("nombre")
+                    b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("precio")
+                    b.Property<int>("Precio")
                         .HasColumnType("int");
 
-                    b.Property<int>("proveedoresId")
+                    b.Property<int>("ProveedoresId")
                         .HasColumnType("int");
 
-                    b.Property<int>("unidades")
+                    b.Property<int>("Unidades")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("categoriaId");
+                    b.HasIndex("CategoriaId");
 
-                    b.HasIndex("proveedoresId");
+                    b.HasIndex("ProveedoresId");
 
                     b.ToTable("Productos");
                 });
@@ -226,23 +226,23 @@ namespace SistemaSGI.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("direccion")
+                    b.Property<string>("Direccion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("email")
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("nombre")
+                    b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("telefono")
+                    b.Property<string>("Telefono")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("web")
+                    b.Property<string>("Web")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -264,21 +264,21 @@ namespace SistemaSGI.Migrations
 
             modelBuilder.Entity("SistemaSGI.Modelos.Productos", b =>
                 {
-                    b.HasOne("SistemaSGI.Modelos.Categoria", "categoria")
+                    b.HasOne("SistemaSGI.Modelos.Categoria", "Categoria")
                         .WithMany()
-                        .HasForeignKey("categoriaId")
+                        .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("SistemaSGI.Modelos.Proveedores", "_proveedor")
                         .WithMany()
-                        .HasForeignKey("proveedoresId")
+                        .HasForeignKey("ProveedoresId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("_proveedor");
 
-                    b.Navigation("categoria");
+                    b.Navigation("Categoria");
                 });
 #pragma warning restore 612, 618
         }

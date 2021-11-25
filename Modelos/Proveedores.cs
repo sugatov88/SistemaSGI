@@ -8,16 +8,16 @@ namespace SistemaSGI.Modelos
     {
         [Key]
         public int Id { get; set; }  
-        [Required]
-        public string nombre { get; set; }
-        [Required]
-        public string direccion { get; set; }
-        [Required]
-        public string email { get; set; }
-        [Required]
-        public string web { get; set; }
-        [Required]
-        public string telefono { get; set; }
+        [Display(Name ="Nombre")]
+        public string Nombre { get; set; }
+        [Display(Name = "Direccion")]
+        public string Direccion { get; set; }
+        [Display(Name = "E-mail")]
+        public string Email { get; set; }
+        [Display(Name = "Sitio Web")]
+        public string Web { get; set; }
+        [Display(Name = "Telefono")]
+        public string Telefono { get; set; }
 
     }
 

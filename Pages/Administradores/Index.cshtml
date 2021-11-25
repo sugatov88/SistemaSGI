@@ -1,17 +1,17 @@
 ﻿@page
 @model SistemaSGI.Pages.Administradores.IndexModel
 @{
-    ViewData["Title"] = "Lista de Administradores";
+    ViewData["Title"] = "Registro Administradores";
 
 
 }
 <div class=" = " container">
     <div class="row">
         <div class=" = " col-9">
-            <h2 class=" text-info"> Lista de Administradores </h2>
+            <h2 class=" text-info"> Registro de administradores </h2>
         </div>
         <div class="col-3">
-            <a class="btn btn-secondary" asp-page="/Administradores/Crear">Crear nueva Administrador</a>
+            <a class="btn btn-secondary" asp-page="/Administradores/Crear">Agregar nuevo</a>
         </div>
         <br />
         <br />
@@ -37,12 +37,12 @@
                     {
                     <tr>
                         <td>@Html.DisplayFor(m => Administradores.Id)   </td>
-                        <td> @Html.DisplayFor(m => Administradores.nombre)   </td>
-                        <td>@Html.DisplayFor(m => Administradores.apellido)   </td>
-                        <td> @Html.DisplayFor(m => Administradores.documento)   </td>
-                        <td>@Html.DisplayFor(m => Administradores.direccion)   </td>
-                        <td> @Html.DisplayFor(m => Administradores.email)   </td>
-                        <td>@Html.DisplayFor(m => Administradores.telefono)   </td>
+                        <td> @Html.DisplayFor(m => Administradores.Nombre)   </td>
+                        <td>@Html.DisplayFor(m => Administradores.Apellido)   </td>
+                        <td> @Html.DisplayFor(m => Administradores.Documento)   </td>
+                        <td>@Html.DisplayFor(m => Administradores.Direccion)   </td>
+                        <td> @Html.DisplayFor(m => Administradores.Email)   </td>
+                        <td>@Html.DisplayFor(m => Administradores.Telefono)   </td>
                        
                         <td>
                             <a class="btn btn-success" asp-page="../Administradores/Detalle" asp-route-id="@Administradores.Id"> Detalles</a>

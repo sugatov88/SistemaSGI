@@ -8,10 +8,10 @@
 <div class=" = " container">
     <div class="row">
         <div class=" = " col-9">
-            <h2 class=" text-info"> Lista de Proveedoress </h2>
+            <h2 class=" text-info">Proveedores</h2>
         </div>
         <div class="col-3">
-            <a class="btn btn-secondary" asp-page="/Proveedoress/Crear">Crear nuevo proveedor</a>
+            <a class="btn btn-secondary" asp-page="/Proveedoress/Crear">Agregar proveedor</a>
         </div>
         <br />
         <br />
@@ -36,11 +36,11 @@
                     {
                     <tr>
                         <td>@Html.DisplayFor(m => Proveedoress.Id)   </td>
-                        <td> @Html.DisplayFor(m => Proveedoress.nombre)   </td>
-                        <td>@Html.DisplayFor(m => Proveedoress.direccion)   </td>
-                        <td> @Html.DisplayFor(m => Proveedoress.email)   </td>
-                        <td> @Html.DisplayFor(m => Proveedoress.web)   </td>
-                        <td>@Html.DisplayFor(m => Proveedoress.telefono)   </td>
+                        <td> @Html.DisplayFor(m => Proveedoress.Nombre)   </td>
+                        <td>@Html.DisplayFor(m => Proveedoress.Direccion)   </td>
+                        <td> @Html.DisplayFor(m => Proveedoress.Email)   </td>
+                        <td> @Html.DisplayFor(m => Proveedoress.Web)   </td>
+                        <td>@Html.DisplayFor(m => Proveedoress.Telefono)   </td>
 
                         <td>
                             <a class="btn btn-success" asp-page="../Proveedoress/Detalle" asp-route-id="@Proveedoress.Id"> Detalles</a>
@@ -58,7 +58,7 @@
         }
         else
         {
-            <p> no hay Proveedoress</p>
+            <p> no hay Proveedores</p>
         }
 
     </div>

@@ -37,8 +37,13 @@ namespace SistemaSGI.Pages.Clientes
             {
                 var ClienteDesdeDb = await _contexto.Cliente.FindAsync(Cliente.Id);
 
-                ClienteDesdeDb.nombre = Cliente.nombre;
-               
+                ClienteDesdeDb.Nombre = Cliente.Nombre;
+                ClienteDesdeDb.Apellido = Cliente.Apellido;
+                ClienteDesdeDb.Documento = Cliente.Documento;
+                ClienteDesdeDb.Direccion = Cliente.Direccion;
+                ClienteDesdeDb.Email = Cliente.Email;
+                ClienteDesdeDb.Telefono = Cliente.Telefono;
+
                 await _contexto.SaveChangesAsync();
                 return RedirectToPage("Index");
             }

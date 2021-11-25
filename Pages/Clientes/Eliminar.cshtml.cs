@@ -41,7 +41,7 @@ namespace SistemaSGI.Pages.Clientes
                     return NotFound();
                 }
                 _contexto.Cliente.Remove(ClienteDesdeDb);
-                ClienteDesdeDb.nombre = Cliente.nombre;
+                ClienteDesdeDb.Nombre = Cliente.Nombre;
                
                 await _contexto.SaveChangesAsync();
                 return RedirectToPage("Index");

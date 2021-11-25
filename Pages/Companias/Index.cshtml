@@ -11,7 +11,7 @@
             <h2 class=" text-info"> Lista de Companias </h2>
         </div>
         <div class="col-3">
-            <a class="btn btn-secondary" asp-page="/Companias/Crear">Crear nueva compania</a>
+            <a class="btn btn-secondary" asp-page="/Companias/Crear">Agregar nuevo</a>
         </div>
         <br />
         <br />
@@ -37,12 +37,12 @@
                     {
                     <tr>
                         <td>@Html.DisplayFor(m => Companias.Id)   </td>
-                        <td>@Html.DisplayFor(m => Companias.nit)   </td>
-                        <td> @Html.DisplayFor(m => Companias.nombre)   </td>
-                        <td>@Html.DisplayFor(m => Companias.direccion)   </td>
-                        <td> @Html.DisplayFor(m => Companias.email)   </td>
-                        <td>@Html.DisplayFor(m => Companias.web)   </td>
-                        <td> @Html.DisplayFor(m => Companias.telefono)   </td>
+                        <td>@Html.DisplayFor(m => Companias.Nit)   </td>
+                        <td> @Html.DisplayFor(m => Companias.Nombre)   </td>
+                        <td>@Html.DisplayFor(m => Companias.Direccion)   </td>
+                        <td> @Html.DisplayFor(m => Companias.Email)   </td>
+                        <td>@Html.DisplayFor(m => Companias.Web)   </td>
+                        <td> @Html.DisplayFor(m => Companias.Telefono)   </td>
 
                         <td>
                             <a class="btn btn-success" asp-page="../Companias/Detalle" asp-route-id="@Companias.Id"> Detalles</a>

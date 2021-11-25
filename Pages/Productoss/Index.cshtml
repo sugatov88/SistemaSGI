@@ -1,17 +1,17 @@
 ﻿@page
 @model SistemaSGI.Pages.Productoss.IndexModel
 @{
-    ViewData["Title"] = "Lista de Productoss";
+    ViewData["Title"] = "Lista de Productos";
 
 
 }
 <div class=" = " container">
     <div class="row">
         <div class=" = " col-9">
-            <h2 class=" text-info"> Lista de Productoss </h2>
+            <h2 class=" text-info">Productos </h2>
         </div>
         <div class="col-3">
-            <a class="btn btn-secondary" asp-page="/Productoss/Crear">Crear nueva Productos</a>
+            <a class="btn btn-secondary" asp-page="/Productoss/Crear">Agregar nuevo</a>
         </div>
         <br />
         <br />
@@ -23,8 +23,8 @@
                         @*<th>@Html.DisplayFor(m => m.Productoss.FirstOrDefault().Id)</th>*@
                         <th>id </th>
                         <th>Nombre</th>
-                        <th>categoria </th>
-                        <th>unidades</th>
+                        <th>Categoria </th>
+                        <th>Unidades</th>
                         <th>Precio </th>
                         <th>Proveedor</th>
                         <th>Marca </th>
@@ -38,14 +38,14 @@
                     {
                     <tr>
                         <td>@Html.DisplayFor(m => Productoss.Id)   </td>
-                        <td> @Html.DisplayFor(m => Productoss.nombre)   </td>
+                        <td> @Html.DisplayFor(m => Productoss.Nombre)   </td>
                       
-                        <td> @Html.DisplayFor(m => Productoss.categoria.nombreCategoria)   </td>
-                        <td>@Html.DisplayFor(m => Productoss.unidades)   </td>
-                        <td> @Html.DisplayFor(m => Productoss.precio)   </td>
+                        <td> @Html.DisplayFor(m => Productoss.Categoria.NombreCategoria)   </td>
+                        <td>@Html.DisplayFor(m => Productoss.Unidades)   </td>
+                        <td> @Html.DisplayFor(m => Productoss.Precio)   </td>
                    
-                        <td> @Html.DisplayFor(m => Productoss._proveedor.nombre)   </td>
-                        <td> @Html.DisplayFor(m => Productoss.marca)   </td>
+                        <td> @Html.DisplayFor(m => Productoss._proveedor.Nombre)   </td>
+                        <td> @Html.DisplayFor(m => Productoss.Marca)   </td>
 
                         <td>
                             <a class="btn btn-success" asp-page="../Productoss/Detalle" asp-route-id="@Productoss.Id"> Detalles</a>

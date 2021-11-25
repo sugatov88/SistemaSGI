@@ -1,15 +1,16 @@
 ﻿@page
-@model SistemaSGI.Pages.Productoss.CrearModel
+@model SistemaSGI.Pages.Productoss.EditarModel
 @{
-    ViewData["Title"] = "Crear Productos";
+    ViewData["Title"] = "Editar Producto";
 }
 
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
-            <div class="text-info">Agregar Producto</div>
+            <div class="text-info">Editar Producto</div>
 
             <form method="post">
+                <input type="hidden" asp-for="ProductosVm.Productos.Id" />
                 <div class="mb-3">
                     <label asp-for="ProductosVm.Productos.Nombre" class="form-label"></label>
                     <input asp-for="ProductosVm.Productos.Nombre" class="form-control" />
@@ -19,7 +20,7 @@
                 <div class="mb-3">
                     <label asp-for="ProductosVm.Productos.Categoria" class="form-label"></label>
                     <select asp-for="ProductosVm.Productos.CategoriaId"
-                            asp-items="@(new SelectList(Model.ProductosVm.ListaCategorias,"Id","nombreCategoria") )" class="form-control"></select>
+                            asp-items="@(new SelectList(Model.ProductosVm.ListaCategorias,"Id","NombreCategoria") )" class="form-control"></select>
                     <span asp-validation-for="ProductosVm.Productos.Categoria.NombreCategoria" class="text-danger"></span>
 
                 </div>
@@ -45,11 +46,11 @@
                 <div class="mb-3">
                     <label asp-for="ProductosVm.Productos.ProveedoresId" class="form-label"></label>
                     <input asp-for="ProductosVm.Productos.Marca" class="form-control" />
-                    <span asp-validation-for="ProductosVm.Productos.Marca" class="text-danger"></span>
+                    <span asp-validation-for="ProductosVm.Productos.ProveedoresId" class="text-danger"></span>
 
                 </div>
 
-                <button type="submit" class="btn btn-primary "> Agregar Productos</button>
+                <button type="submit" class="btn btn-primary "> Guardar cambios</button>
             </form>
         </div>
 
@@ -65,3 +66,4 @@
 {
     <partial name="_ValidationScriptsPartial" />
 }
+

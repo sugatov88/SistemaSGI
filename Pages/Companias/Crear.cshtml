@@ -1,52 +1,53 @@
 ﻿@page
 @model SistemaSGI.Pages.Companias.CrearModel
 @{
-    ViewData["Title"] = "Crear compañias";
+    ViewData["Title"] = "Agregar Compañia";
 }
 
   <div class="container">
       <div class="row">
           <div class="col-8 offset-2">
-              <div class="text-info">Crear una nueva Compania</div>
+              <div class="text-info">Agregar Compañia</div>
 
               <form method="post">
+                  <input type="hidden" asp-for="Compania.Id" />
                   <div class="mb-3">
-                      <label asp-for="Compania.nit" class="form-label"></label>
-                      <input asp-for="Compania.nit" class="form-control" />
-                      <span asp-validation-for="Compania.nit" class="text-danger"></span>
+                      <label asp-for="Compania.Nit" class="form-label"></label>
+                      <input asp-for="Compania.Nit" class="form-control" />
+                      <span asp-validation-for="Compania.Nit" class="text-danger"></span>
 
                   </div>
                   <div class="mb-3">
-                      <label asp-for="Compania.nombre" class="form-label"></label>
-                      <input asp-for="Compania.nombre" class="form-control" />
-                      <span asp-validation-for="Compania.nombre" class="text-danger"></span>
+                      <label asp-for="Compania.Nombre" class="form-label"></label>
+                      <input asp-for="Compania.Nombre" class="form-control" />
+                      <span asp-validation-for="Compania.Nombre" class="text-danger"></span>
 
                   </div>
                   <div class="mb-3">
-                      <label asp-for="Compania.direccion" class="form-label"></label>
-                      <input asp-for="Compania.direccion" class="form-control" />
-                      <span asp-validation-for="Compania.direccion" class="text-danger"></span>
+                      <label asp-for="Compania.Direccion" class="form-label"></label>
+                      <input asp-for="Compania.Direccion" class="form-control" />
+                      <span asp-validation-for="Compania.Direccion" class="text-danger"></span>
 
                   </div>
                   <div class="mb-3">
-                      <label asp-for="Compania.email" class="form-label"></label>
-                      <input asp-for="Compania.email" class="form-control" />
-                      <span asp-validation-for="Compania.email" class="text-danger"></span>
+                      <label asp-for="Compania.Email" class="form-label"></label>
+                      <input asp-for="Compania.Email" class="form-control" />
+                      <span asp-validation-for="Compania.Email" class="text-danger"></span>
 
                   </div>
                   <div class="mb-3">
-                      <label asp-for="Compania.web" class="form-label"></label>
-                      <input asp-for="Compania.web" class="form-control" />
-                      <span asp-validation-for="Compania.web" class="text-danger"></span>
+                      <label asp-for="Compania.Web" class="form-label"></label>
+                      <input asp-for="Compania.Web" class="form-control" />
+                      <span asp-validation-for="Compania.Web" class="text-danger"></span>
 
                   </div>
                   <div class="mb-3">
-                      <label asp-for="Compania.telefono" class="form-label"></label>
-                      <input asp-for="Compania.telefono" class="form-control" />
-                      <span asp-validation-for="Compania.telefono" class="text-danger"></span>
+                      <label asp-for="Compania.Telefono" class="form-label"></label>
+                      <input asp-for="Compania.Telefono" class="form-control" />
+                      <span asp-validation-for="Compania.Telefono" class="text-danger"></span>
 
                   </div>
-                  <button type="submit" class="btn btn-primary ">crear Compania</button>
+                  <button type="submit" class="btn btn-primary ">Guardar cambios</button>
               </form>
           </div>
 

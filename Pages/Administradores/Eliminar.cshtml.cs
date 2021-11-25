@@ -41,7 +41,7 @@ namespace SistemaSGI.Pages.Administradores
                     return NotFound();
                 }
                 _contexto.Administrador.Remove(AdministradorDesdeDb);
-                AdministradorDesdeDb.nombre = Administrador.nombre;
+                AdministradorDesdeDb.Nombre = Administrador.Nombre;
                
                 await _contexto.SaveChangesAsync();
                 return RedirectToPage("Index");
