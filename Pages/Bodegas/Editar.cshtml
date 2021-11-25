@@ -1,0 +1,42 @@
+﻿@page
+@model SistemaSGI.Pages.Bodegas.EditarModel
+@{
+    ViewData["Title"] = "Editar Bodegas";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="text-info">Editar Bodega</h2>
+
+            <form method="post">
+
+                <input type="hidden" asp-for="Bodega.Id" />
+                <div class="mb-3">
+                    <label asp-for="Bodega.Codigo" class="form-label"></label>
+                    <input asp-for="Bodega.Codigo" class="form-control" />
+                    <span asp-validation-for="Bodega.Codigo" class="text-danger"></span>
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Bodega.Stock" class="form-label"></label>
+                    <input asp-for="Bodega.Stock" class="form-control" />
+                    <span asp-validation-for="Bodega.Stock" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary ">Guardar cambios</button>
+            </form>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6 ">
+            <a asp-page="Index" class="btn btn-success"> Volver</a>
+        </div>
+
+    </div>
+</div>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
+

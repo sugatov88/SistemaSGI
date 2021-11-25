@@ -1,0 +1,41 @@
+﻿@page
+@model SistemaSGI.Pages.Bodegas.CrearModel
+@{
+    ViewData["Title"] = "Crear Bodegas";
+}
+
+  <div class="container">
+      <div class="row">
+          <div class="col-8 offset-2">
+              <div class="text-info">Agregar Bodegas</div>
+
+              <form method="post">
+                  <div class="mb-3">
+                      <label asp-for="Bodegas.Codigo" class="form-label"></label>
+                      <input asp-for="Bodegas.Codigo" class="form-control" />
+                      <span asp-validation-for="Bodegas.Codigo" class="text-danger"></span>
+
+                  </div>
+                  <div class="mb-3">
+                      <label asp-for="Bodegas.Stock" class="form-label"></label>
+                      <input asp-for="Bodegas.Stock" class="form-control" />
+                      <span asp-validation-for="Bodegas.Stock" class="text-danger"></span>
+
+                  </div>
+                  <button type="submit" class="btn btn-primary "> Guardar</button>
+              </form>
+          </div>
+
+      </div>
+      <div class="row">
+          <div class="col-6 ">
+              <a asp-page="Index" class="btn btn-success"> Volver</a>
+          </div>
+
+      </div>
+  </div>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
+

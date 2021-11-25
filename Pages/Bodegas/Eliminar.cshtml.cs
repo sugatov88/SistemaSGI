@@ -7,14 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SistemaSGI.Datos;
 using SistemaSGI.Modelos;
-using SistemaSGI.Modelos.ViewModels;
 
-namespace SistemaSGI.Pages.Productoss
+namespace SistemaSGI.Pages.Bodegas
 {
     public class EliminarModel : PageModel
     {
-
-
         private readonly ApplicationDbContext _contexto;
 
         public EliminarModel(ApplicationDbContext contexto)
@@ -23,44 +20,34 @@ namespace SistemaSGI.Pages.Productoss
         }
 
         [BindProperty]
-        public CrearProductoVm ProductosVm { get; set; }
-
-
-
-        public async Task<IActionResult> OnGet(int id)
-        {
-            ProductosVm = new CrearProductoVm()
+        public Bodega Bodega { get; set; }
+        
+        
+    
+        public async void OnGet(int id)
             {
-                ListaCategorias = await _contexto.Categoria.ToListAsync(),
-                ListaProvedores = await _contexto.Proveedores.ToListAsync(),
-                Productos = await _contexto.Productos.FindAsync(id)
 
-
-
-
-            };
-            return Page();
-
-        }
+            Bodega = await _contexto.Bodega.FindAsync(id);
+            }
 
         public async Task<IActionResult> OnPost()
         {
-
+          
 
             {
-                var productos = await _contexto.Productos.FindAsync(ProductosVm.Productos.Id);
-                if (productos == null)
+                var BodegaDesdeDb = await _contexto.Bodega.FindAsync(Bodega.Id);
+                if(BodegaDesdeDb== null)
                 {
                     return NotFound();
                 }
-
-                _contexto.Productos.Remove(productos);
-                
+                _contexto.Bodega.Remove(BodegaDesdeDb);
+                BodegaDesdeDb.Codigo = Bodega.Codigo;
+                BodegaDesdeDb.Stock = Bodega.Stock;
 
                 await _contexto.SaveChangesAsync();
                 return RedirectToPage("Index");
             }
-
+           
         }
     }
 }

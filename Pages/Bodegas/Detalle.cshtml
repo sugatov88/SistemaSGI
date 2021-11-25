@@ -1,0 +1,28 @@
+﻿@page
+@model SistemaSGI.Pages.Bodegas.DetalleModel
+@{
+    ViewData["Title"] = "Detalles ";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="text-info">Detalles </h2>
+            <ul class="list-group">
+                <li class="list-group-item">Codigo  : @Html.DisplayFor(m => m.Bodega.Codigo)</li>
+                <li class="list-group-item">Stock : @Html.DisplayFor(m => m.Bodega.Stock)</li>
+            
+            </ul>
+
+
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6 ">
+            <a asp-page="Index" class="btn btn-success"> Volver</a>
+        </div>
+
+    </div>
+</div>

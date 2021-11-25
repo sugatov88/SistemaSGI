@@ -1,14 +1,14 @@
 ﻿@page
 @model SistemaSGI.Pages.Inventarios.IndexModel
 @{
-    ViewData["Title"] = "Inventario";
+    ViewData["Title"] = "Lista de Bodega";
+
+
 }
-
-
 <div class=" = " container">
     <div class="row">
         <div class=" = " col-9">
-            <h2 class=" text-info">Inventario </h2>
+            <h2 class=" text-info">Productos </h2>
         </div>
         <div class="col-3">
             <a class="btn btn-secondary" asp-page="/Inventarios/Crear">Agregar nuevo</a>
@@ -20,35 +20,42 @@
             <table id="tblInventarios" class="table table-striped table-bordered" style="width: 100%;">
                 <thead>
                     <tr>
-                        <th>Id </th>
-                        <th>Codigo</th>
-                        <th>Producto </th>
-                        <th>Marca</th>
+                        @*<th>@Html.DisplayFor(m => m.Inventarios.FirstOrDefault().Id)</th>*@
+                        <th>id </th>
+                        <th>Nombre</th>
                         <th>Categoria </th>
-                        <th>Proveedor </th>
-                        <th>Precio</th>
-                        <th>Unidades </th>
-                        <th>Stock </th>
+                        <th>Unidades</th>
+                        <th>Precio </th>
+                        <th>Proveedor</th>
+                        <th>Marca </th>
+                        <th>Bodega</th>
+
+                        
+
+
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var Inventarios in Model.Inventarios)
                     {
                     <tr>
-                        <td>@Html.DisplayFor(m => Inventarios.Id)</td>
-                        <td>@Html.DisplayFor(m => Inventarios.Codigo)</td>
-                        <td>@Html.DisplayFor(m => Inventarios.Productos.Nombre)</td>
-                        <td>@Html.DisplayFor(m => Inventarios.Productos.Marca)</td>
-                        <td>@Html.DisplayFor(m => Inventarios.Productos.Categoria)</td>
-                        <td>@Html.DisplayFor(m => Inventarios.Productos._proveedor)<td>
-                        <td>@Html.DisplayFor(m => Inventarios.Productos.Precio)</td>
-                        <td>@Html.DisplayFor(m => Inventarios.Productos.Unidades)</td>
-                        <td>@Html.DisplayFor(m => Inventarios.Stock)</td>
+                        <td>@Html.DisplayFor(m => Inventarios.Id)   </td>
+                        <td> @Html.DisplayFor(m => Inventarios.Nombre)   </td>
+                      
+                        <td> @Html.DisplayFor(m => Inventarios.Categoria.NombreCategoria)   </td>
+                        <td>@Html.DisplayFor(m => Inventarios.Unidades)   </td>
+                        <td> @Html.DisplayFor(m => Inventarios.Precio)   </td>
+                   
+                        <td> @Html.DisplayFor(m => Inventarios._proveedor.Nombre)   </td>
+                        <td> @Html.DisplayFor(m => Inventarios.Marca)   </td>
+                        <td>@Html.DisplayFor(m=>Inventarios.Bodega.Codigo)</td>
 
                         <td>
                             <a class="btn btn-success" asp-page="../Inventarios/Detalle" asp-route-id="@Inventarios.Id"> Detalles</a>
                             <a class="btn btn-warning" asp-page="../Inventarios/Editar" asp-route-id="@Inventarios.Id"> Editar</a>
                             <a class="btn btn-danger" asp-page="../Inventarios/Eliminar" asp-route-id="@Inventarios.Id"> Eliminar</a>
+
+
                         </td>
                     </tr>
                     }

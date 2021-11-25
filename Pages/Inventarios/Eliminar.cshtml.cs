@@ -23,15 +23,16 @@ namespace SistemaSGI.Pages.Inventarios
         }
 
         [BindProperty]
-        public CrearInventarioVm InventarioVm { get; set; }
+        public CrearInventarioVm InventariosVm { get; set; }
 
 
 
         public async Task<IActionResult> OnGet(int id)
         {
-            InventarioVm = new CrearInventarioVm()
+            InventariosVm = new CrearInventarioVm()
             {
-                ListaProductos = await _contexto.Productos.ToListAsync(),
+                ListaCategorias = await _contexto.Categoria.ToListAsync(),
+                ListaProvedores = await _contexto.Proveedores.ToListAsync(),
                 Inventario = await _contexto.Inventario.FindAsync(id)
 
 
@@ -47,13 +48,13 @@ namespace SistemaSGI.Pages.Inventarios
 
 
             {
-                var Inventario = await _contexto.Inventario.FindAsync(InventarioVm.Inventario.Id);
-                if (Inventario == null)
+                var productos = await _contexto.Inventario.FindAsync(InventariosVm.Inventario.Id);
+                if (productos == null)
                 {
                     return NotFound();
                 }
 
-                _contexto.Inventario.Remove(Inventario);
+                _contexto.Inventario.Remove(productos);
                 
 
                 await _contexto.SaveChangesAsync();

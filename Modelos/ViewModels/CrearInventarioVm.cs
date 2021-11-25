@@ -7,13 +7,11 @@ namespace SistemaSGI.Modelos.ViewModels
 {
     public class CrearInventarioVm
     {
-
-        public List<Productos> ListaProductos { get; set; }
-        public List<Categoria> ListaCategoria { get; set; }
-        public List<Proveedores> ListaProveedores { get; set; }
+        public List<Categoria> ListaCategorias { get; set; }
+        public List<Proveedores>ListaProvedores { get; set; }
+        public List<Bodega> ListaBodegas { get; set; }
 
         public Inventario Inventario { get; set; }
 
     }
 }
-

@@ -1,0 +1,33 @@
+﻿@page
+@model SistemaSGI.Pages.Bodegas.EliminarModel
+@{
+    ViewData["Title"] = "Eliminar Bodegas";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="text-info">Eliminar Bodega</h2>
+
+            <form method="post">
+
+                <input type="hidden" asp-for="Bodega.Id"/>
+                <div class="mb-3">
+                    <label asp-for="Bodega.Codigo" class="form-label"></label>
+                    <input asp-for="Bodega.Codigo" class="form-control" readonly/>
+                    <span asp-validation-for="Bodega.Codigo" class="text-danger"></span>
+
+                </div>
+                <button type="submit" class="btn btn-primary ">Eliminar</button>
+            </form>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6 ">
+            <a asp-page="Index" class="btn btn-success"> Volver</a>
+        </div>
+
+    </div>
+</div>
+

@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using SistemaSGI.Datos;
 using SistemaSGI.Modelos;
 
-namespace SistemaSGI.Pages.Productoss
+namespace SistemaSGI.Pages.Bodegas
 {
-
+    
     public class IndexModel : PageModel
-
+      
     {
         private readonly ApplicationDbContext _contexto;
 
@@ -21,13 +21,11 @@ namespace SistemaSGI.Pages.Productoss
             _contexto = contexto;
         }
 
-        public IEnumerable<Productos> Productoss { get; set; }
+        public IEnumerable<Bodega> Bodegas { get; set; }
 
         public async Task OnGet()
         {
-            Productoss = await _contexto.Productos.Include(c=>c.Categoria).ToListAsync();
-            Productoss = await _contexto.Productos.Include(c => c._proveedor).ToListAsync();
+            Bodegas = await _contexto.Bodega.ToListAsync();
         }
-
     }
 }

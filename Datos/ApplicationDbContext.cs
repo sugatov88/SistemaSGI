@@ -24,9 +24,9 @@ namespace SistemaSGI.Datos
 
         public DbSet<FormaPago> FormaPago { get; set; }
 
-        public DbSet<Inventario> Inventario { get; set; }
+        public DbSet<Bodega> Bodega { get; set; }
 
-        public DbSet<Productos> Productos { get; set; }
+        public DbSet<Inventario> Inventario { get; set; }
 
         public DbSet<Proveedores> Proveedores { get; set; }
 

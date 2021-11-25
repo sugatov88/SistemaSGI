@@ -1,0 +1,58 @@
+﻿@page
+@model SistemaSGI.Pages.Bodegas.IndexModel
+@{
+    ViewData["Title"] = "Bodegas";
+
+
+}
+<div class=" = "container">
+    <div class="row">
+        <div class=" = "col-9">
+            <h2 class=" text-info">Bodegas </h2>
+        </div>
+        <div class ="col-3">
+            <a class="btn btn-secondary" asp-page="/Bodegas/Crear">Agregar nuevo</a>
+        </div>
+        <br />
+        <br />
+        @if(Model.Bodegas.Count()>0)
+            {
+    <table id="tblBodegas" class="table table-striped table-bordered" style="width: 100%;">
+        <thead>
+            <tr>
+                @*<th>@Html.DisplayFor(m => m.Bodegas.FirstOrDefault().Id)</th>*@
+                <th>id </th>
+                <th>Codigo</th>
+                <th>Stock</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Bodegas in Model.Bodegas)
+            {
+            <tr>
+                <td>@Html.DisplayFor(m => Bodegas.Id)   </td>
+                <td> @Html.DisplayFor(m => Bodegas.Codigo)   </td>
+                <td> @Html.DisplayFor(m => Bodegas.Stock)   </td>
+                <td>
+                    <a class="btn btn-success" asp-page="../Bodegas/Detalle" asp-route-id="@Bodegas.Id"> Detalles</a>
+                    <a class="btn btn-warning" asp-page="../Bodegas/Editar" asp-route-id="@Bodegas.Id"> Editar</a>
+                    <a class="btn btn-danger" asp-page="../Bodegas/Eliminar" asp-route-id="@Bodegas.Id"> Eliminar</a>
+
+
+                </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+
+            }
+            else
+            {
+    <p> no hay Bodegas</p>
+            }
+
+    </div>
+
+</div>

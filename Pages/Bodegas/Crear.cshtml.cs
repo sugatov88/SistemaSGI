@@ -4,12 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 using SistemaSGI.Datos;
 using SistemaSGI.Modelos;
-using SistemaSGI.Modelos.ViewModels;
 
-namespace SistemaSGI.Pages.Productoss
+namespace SistemaSGI.Pages.Bodegas
 {
     public class CrearModel : PageModel
     {
@@ -23,31 +21,15 @@ namespace SistemaSGI.Pages.Productoss
         }
 
         [BindProperty]
-        public CrearProductoVm ProductosVm { get; set; }
-
-
-
-        public async Task <IActionResult> OnGet()
+        public Bodega Bodegas { get; set; }
+        public void OnGet()
         {
-            ProductosVm = new CrearProductoVm()
-            {
-                ListaCategorias = await _contexto.Categoria.ToListAsync(),
-                ListaProvedores=await _contexto.Proveedores.ToListAsync(),
-                Productos=new Modelos.Productos()
-
-
-
-
-            };
-            return Page();
-
         }
-        
         public async Task <IActionResult> OnPost()
         {
             if (ModelState.IsValid)
             {
-                await _contexto.Productos.AddAsync(ProductosVm.Productos);
+                await _contexto.Bodega.AddAsync(Bodegas);
                 await _contexto.SaveChangesAsync();
                 return RedirectToPage("Index");
             }

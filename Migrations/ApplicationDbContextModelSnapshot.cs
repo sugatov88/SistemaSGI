@@ -54,6 +54,24 @@ namespace SistemaSGI.Migrations
                     b.ToTable("Administrador");
                 });
 
+            modelBuilder.Entity("SistemaSGI.Modelos.Bodega", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Codigo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Stock")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Bodega");
+                });
+
             modelBuilder.Entity("SistemaSGI.Modelos.Categoria", b =>
                 {
                     b.Property<int>("Id")
@@ -78,27 +96,21 @@ namespace SistemaSGI.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Apellido")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Direccion")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Documento")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefono")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -114,27 +126,21 @@ namespace SistemaSGI.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Direccion")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nit")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefono")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Web")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -165,40 +171,16 @@ namespace SistemaSGI.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("Codigo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ProductosId")
+                    b.Property<int>("BodegaId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Stock")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductosId");
-
-                    b.ToTable("Inventario");
-                });
-
-            modelBuilder.Entity("SistemaSGI.Modelos.Productos", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
 
                     b.Property<int>("CategoriaId")
                         .HasColumnType("int");
 
                     b.Property<string>("Marca")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Precio")
@@ -212,11 +194,13 @@ namespace SistemaSGI.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BodegaId");
+
                     b.HasIndex("CategoriaId");
 
                     b.HasIndex("ProveedoresId");
 
-                    b.ToTable("Productos");
+                    b.ToTable("Inventario");
                 });
 
             modelBuilder.Entity("SistemaSGI.Modelos.Proveedores", b =>
@@ -227,23 +211,18 @@ namespace SistemaSGI.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Direccion")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefono")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Web")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -253,17 +232,12 @@ namespace SistemaSGI.Migrations
 
             modelBuilder.Entity("SistemaSGI.Modelos.Inventario", b =>
                 {
-                    b.HasOne("SistemaSGI.Modelos.Productos", "Productos")
+                    b.HasOne("SistemaSGI.Modelos.Bodega", "Bodega")
                         .WithMany()
-                        .HasForeignKey("ProductosId")
+                        .HasForeignKey("BodegaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Productos");
-                });
-
-            modelBuilder.Entity("SistemaSGI.Modelos.Productos", b =>
-                {
                     b.HasOne("SistemaSGI.Modelos.Categoria", "Categoria")
                         .WithMany()
                         .HasForeignKey("CategoriaId")
@@ -277,6 +251,8 @@ namespace SistemaSGI.Migrations
                         .IsRequired();
 
                     b.Navigation("_proveedor");
+
+                    b.Navigation("Bodega");
 
                     b.Navigation("Categoria");
                 });

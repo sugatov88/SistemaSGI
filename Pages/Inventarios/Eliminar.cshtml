@@ -1,38 +1,63 @@
 ﻿@page
 @model SistemaSGI.Pages.Inventarios.EliminarModel
 @{
-    ViewData["Title"] = "Eliminar inventario";
+    ViewData["Title"] = "Eliminar INventario";
 }
 
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
-            <div class="text-info">Eliminar inventario</div>
+            <div class="text-info">Eliminar Producto</div>
 
             <form method="post">
-                <input type="hidden" asp-for="InventarioVm.Inventario.Id" />
-               
+                <input type="hidden" asp-for="InventariosVm.Inventario.Id" />
                 <div class="mb-3">
-                    <label asp-for="InventarioVm.Inventario.Productos" class="form-label"></label>
-                    <input asp-for="InventarioVm.Inventario.ProductosId"
-                            asp-items="@(new SelectList(Model.InventarioVm.ListaProductos,"Id","Nombre") )" class="form-control"readonly/>
-                    <span asp-validation-for="InventarioVm.Inventario.Productos.Nombre" class="text-danger"></span>
+                    <label asp-for="InventariosVm.Inventario.Nombre" class="form-label"></label>
+                    <input asp-for="InventariosVm.Inventario.Nombre" class="form-control" readonly />
+                    <span asp-validation-for="InventariosVm.Inventario.Nombre" class="text-danger"></span>
+
+                </div>
+                @*<div class="mb-3">
+                    <label asp-for="InventariosVm.Inventario.Categoria" class="form-label"></label>
+                    <input asp-for="InventariosVm.Inventario.CategoriaId"
+                           asp-items="@(new SelectList(Model.InventariosVm.ListaCategorias,"Id","NombreCategoria") )" class="form-control" readonly />
+                    <span asp-validation-for="InventariosVm.Inventario.Categoria.NombreCategoria" class="text-danger"></span>
 
                 </div>
                 <div class="mb-3">
-                    <label asp-for="InventarioVm.Inventario.Codigo" class="form-label"></label>
-                    <input asp-for="InventarioVm.Inventario.Codigo" class="form-control" readonly/>
-                    <span asp-validation-for="InventarioVm.Inventario.Codigo" class="text-danger"></span>
+                    <label asp-for="InventariosVm.Inventario.Unidades" class="form-label"></label>
+                    <input asp-for="InventariosVm.Inventario.Unidades" class="form-control" readonly />
+                    <span asp-validation-for="InventariosVm.Inventario.Unidades" class="text-danger"></span>
 
                 </div>
                 <div class="mb-3">
-                    <label asp-for="InventarioVm.Inventario.Stock" class="form-label"></label>
-                    <input asp-for="InventarioVm.Inventario.Stock" class="form-control"readonly />
-                    <span asp-validation-for="InventarioVm.Inventario.Stock" class="text-danger"></span>
+                    <label asp-for="InventariosVm.Inventario.Precio" class="form-label"></label>
+                    <input asp-for="InventariosVm.Inventario.Unidades" class="form-control" readonly />
+                    <span asp-validation-for="InventariosVm.Inventario.Precio" class="text-danger"></span>
 
                 </div>
-                
+                <div class="mb-3">
+                    <label asp-for="InventariosVm.Inventario.Precio" class="form-label"></label>
+                    <input asp-for="InventariosVm.Inventario.Precio"
+                           asp-items="@(new SelectList(Model.InventariosVm.ListaProvedores,"Id","Nombre") )" class="form-control" readonly />
+                    <span asp-validation-for="InventariosVm.Inventario._proveedor" class="text-danger"></span>
 
+                </div>
+                <div class="mb-3">
+                    <label asp-for="InventariosVm.Inventario.ProveedoresId" class="form-label"></label>
+                    <input asp-for="InventariosVm.Inventario.Marca" class="form-control" readonly />
+                    <span asp-validation-for="InventariosVm.Inventario.ProveedoresId" class="text-danger"></span>
+
+
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="InventariosVm.Inventario.Bodega" class="form-label"></label>
+                    <input asp-for="InventariosVm.Inventario.BodegaId"
+                            asp-items="@(new SelectList(Model.InventariosVm.ListaBodegas, "Id", "Codigo") )" class="form-control" readonly/>
+                    <span asp-validation-for="InventariosVm.Inventario.Bodega" class="text-danger"></span>
+
+                </div>*@
                 <button type="submit" class="btn btn-primary "> Eliminar</button>
             </form>
         </div>

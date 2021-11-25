@@ -7,14 +7,16 @@
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
-            <h2 class="text-info">Detalle Inventario: @Html.DisplayFor(m => m.Inventario.Id)</h2>
+            <h2 class="text-info">Detalle Inventarios: @Html.DisplayFor(m => m.Inventarios.Id)</h2>
             <ul class="list-group">
-                <li class="list-group-item">ID : @Html.DisplayFor(m => m.Inventario.Id)</li>
-                <li class="list-group-item">Nombre : @Html.DisplayFor(m => m.Inventario.ProductosId)</li>
-                <li class="list-group-item">Categoria : @Html.DisplayFor(m => m.Inventario.Productos.Nombre)</li>
-                <li class="list-group-item">Unidades : @Html.DisplayFor(m => m.Inventario.Codigo)</li>
-                <li class="list-group-item">Precio : @Html.DisplayFor(m => m.Inventario.Stock)</li>
-               
+                <li class="list-group-item">ID : @Html.DisplayFor(m => m.Inventarios.Id)</li>
+                <li class="list-group-item">Nombre : @Html.DisplayFor(m => m.Inventarios.Nombre)</li>
+                <li class="list-group-item">Categoria : @Html.DisplayFor(m => m.Inventarios.Categoria.NombreCategoria)</li>
+                <li class="list-group-item">Unidades : @Html.DisplayFor(m => m.Inventarios.Unidades)</li>
+                <li class="list-group-item">Precio : @Html.DisplayFor(m => m.Inventarios.Precio)</li>
+                <li class="list-group-item">Proveedor : @Html.DisplayFor(m => m.Inventarios._proveedor.Nombre)</li>
+                <li class="list-group-item">Marca : @Html.DisplayFor(m => m.Inventarios.Marca)</li>
+
             </ul>
 
 

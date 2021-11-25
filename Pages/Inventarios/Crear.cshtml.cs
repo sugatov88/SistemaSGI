@@ -13,8 +13,8 @@ namespace SistemaSGI.Pages.Inventarios
 {
     public class CrearModel : PageModel
     {
-
-
+          
+    
         private readonly ApplicationDbContext _contexto;
 
         public CrearModel(ApplicationDbContext contexto)
@@ -23,16 +23,18 @@ namespace SistemaSGI.Pages.Inventarios
         }
 
         [BindProperty]
-        public CrearInventarioVm InventarioVm { get; set; }
+        public CrearInventarioVm InventariosVm { get; set; }
 
 
 
-        public async Task<IActionResult> OnGet()
+        public async Task <IActionResult> OnGet()
         {
-            InventarioVm = new CrearInventarioVm()
+            InventariosVm = new CrearInventarioVm()
             {
-                ListaProductos = await _contexto.Productos.ToListAsync(),
-                Inventario = new Modelos.Inventario()
+                ListaCategorias = await _contexto.Categoria.ToListAsync(),
+                ListaProvedores=await _contexto.Proveedores.ToListAsync(),
+                ListaBodegas = await _contexto.Bodega.ToListAsync(),
+                Inventario =new Modelos.Inventario()
 
 
 
@@ -41,12 +43,12 @@ namespace SistemaSGI.Pages.Inventarios
             return Page();
 
         }
-
-        public async Task<IActionResult> OnPost()
+        
+        public async Task <IActionResult> OnPost()
         {
             if (ModelState.IsValid)
             {
-                await _contexto.Inventario.AddAsync(InventarioVm.Inventario);
+                await _contexto.Inventario.AddAsync(InventariosVm.Inventario);
                 await _contexto.SaveChangesAsync();
                 return RedirectToPage("Index");
             }

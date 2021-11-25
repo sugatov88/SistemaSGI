@@ -23,15 +23,17 @@ namespace SistemaSGI.Pages.Inventarios
         }
 
         [BindProperty]
-        public CrearInventarioVm InventarioVm { get; set; }
+        public CrearInventarioVm InventariosVm { get; set; }
 
 
 
         public async Task<IActionResult> OnGet(int id)
         {
-            InventarioVm = new CrearInventarioVm()
+            InventariosVm = new CrearInventarioVm()
             {
-                ListaProductos = await _contexto.Productos.ToListAsync(),
+                ListaCategorias = await _contexto.Categoria.ToListAsync(),
+                ListaProvedores = await _contexto.Proveedores.ToListAsync(),
+                ListaBodegas = await _contexto.Bodega.ToListAsync(),
                 Inventario = await _contexto.Inventario.FindAsync(id)
 
 
@@ -48,11 +50,11 @@ namespace SistemaSGI.Pages.Inventarios
 
 
             {
-                var InventarioDesdeDb = await _contexto.Inventario.FindAsync(InventarioVm.Inventario.Id);
-                InventarioDesdeDb.Productos = InventarioVm.Inventario.Productos;
-                InventarioDesdeDb.Codigo = InventarioVm.Inventario.Codigo;
-                InventarioDesdeDb.Stock = InventarioVm.Inventario.Stock;
-                
+                var ProductosDesdeDb = await _contexto.Inventario.FindAsync(InventariosVm.Inventario.Id);
+                ProductosDesdeDb.Nombre = InventariosVm.Inventario.Nombre;
+                ProductosDesdeDb.Unidades = InventariosVm.Inventario.Unidades;
+                ProductosDesdeDb.Precio = InventariosVm.Inventario.Precio;
+                ProductosDesdeDb.Marca = InventariosVm.Inventario.Marca;
                 await _contexto.SaveChangesAsync();
                 return RedirectToPage("Index");
             }
