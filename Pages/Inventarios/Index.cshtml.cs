@@ -26,7 +26,7 @@ namespace SistemaSGI.Pages.Inventarios
         public async Task OnGet()
         {
             Inventarios = await _contexto.Inventario.Include(c => c.Productos).ToListAsync();
-            
+
         }
 
     }

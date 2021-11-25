@@ -9,7 +9,8 @@ namespace SistemaSGI.Modelos.ViewModels
     {
 
         public List<Productos> ListaProductos { get; set; }
-        
+        public List<Categoria> ListaCategoria { get; set; }
+        public List<Proveedores> ListaProveedores { get; set; }
 
         public Inventario Inventario { get; set; }
 
