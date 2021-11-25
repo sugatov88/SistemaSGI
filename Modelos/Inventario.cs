@@ -9,13 +9,13 @@ namespace SistemaSGI.Modelos
         public int Id { get; set; }
 
         [Display(Name = "Producto")]
-        public int productosId {  get; set; }
+        public int ProductosId {  get; set; }
         
-        public Productos  productos { get; set; }
+        public Productos  Productos { get; set; }
         [Display(Name= "Codigo")]
-        public string codigo { get; set; }
+        public string Codigo { get; set; }
         [Display(Name= "Stock")]
-        public string stock { get; set; }
+        public string Stock { get; set; }
 
        
     }

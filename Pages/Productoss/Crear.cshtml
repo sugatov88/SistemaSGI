@@ -19,7 +19,7 @@
                 <div class="mb-3">
                     <label asp-for="ProductosVm.Productos.Categoria" class="form-label"></label>
                     <select asp-for="ProductosVm.Productos.CategoriaId"
-                            asp-items="@(new SelectList(Model.ProductosVm.ListaCategorias,"Id","nombreCategoria") )" class="form-control"></select>
+                            asp-items="@(new SelectList(Model.ProductosVm.ListaCategorias, "Id", "NombreCategoria") )" class="form-control"></select>
                     <span asp-validation-for="ProductosVm.Productos.Categoria.NombreCategoria" class="text-danger"></span>
 
                 </div>
@@ -36,14 +36,14 @@
 
                 </div>
                 <div class="mb-3">
-                    <label asp-for="ProductosVm.Productos.Precio" class="form-label"></label>
-                    <select asp-for="ProductosVm.Productos.Precio"
+                    <label asp-for="ProductosVm.Productos._proveedor" class="form-label"></label>
+                    <select asp-for="ProductosVm.Productos.ProveedoresId"
                             asp-items="@(new SelectList(Model.ProductosVm.ListaProvedores,"Id","Nombre") )" class="form-control"></select>
                     <span asp-validation-for="ProductosVm.Productos._proveedor" class="text-danger"></span>
 
                 </div>
                 <div class="mb-3">
-                    <label asp-for="ProductosVm.Productos.ProveedoresId" class="form-label"></label>
+                    <label asp-for="ProductosVm.Productos.Marca" class="form-label"></label>
                     <input asp-for="ProductosVm.Productos.Marca" class="form-control" />
                     <span asp-validation-for="ProductosVm.Productos.Marca" class="text-danger"></span>
 

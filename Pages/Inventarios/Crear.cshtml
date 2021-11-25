@@ -1,0 +1,50 @@
+﻿@page
+@model SistemaSGI.Pages.Inventarios.CrearModel
+@{
+    ViewData["Title"] = "Agregar Inventario";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="text-info">Agregar Producto</div>
+
+            <form method="post">
+          
+                <div class="mb-3">
+                    <label asp-for="InventarioVm.Inventario.Productos" class="form-label"></label>
+                    <select asp-for="InventarioVm.Inventario.ProductosId"
+                            asp-items="@(new SelectList(Model.InventarioVm.ListaProductos,"Id","Nombre") )" class="form-control"></select>
+                    <span asp-validation-for="InventarioVm.Inventario.Productos" class="text-danger"></span>
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="InventarioVm.Inventario.Codigo" class="form-label"></label>
+                    <input asp-for="InventarioVm.Inventario.Codigo" class="form-control" />
+                    <span asp-validation-for="InventarioVm.Inventario.Codigo" class="text-danger"></span>
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="InventarioVm.Inventario.Stock" class="form-label"></label>
+                    <input asp-for="InventarioVm.Inventario.Stock" class="form-control" />
+                    <span asp-validation-for="InventarioVm.Inventario.Stock" class="text-danger"></span>
+
+                </div>
+             
+
+                <button type="submit" class="btn btn-primary ">Guardar</button>
+            </form>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6 ">
+            <a asp-page="Index" class="btn btn-success"> Volver</a>
+        </div>
+
+    </div>
+</div>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

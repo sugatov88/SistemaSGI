@@ -1,0 +1,31 @@
+﻿@page
+@model SistemaSGI.Pages.Inventarios.DetalleModel
+@{
+    ViewData["Title"] = "Detalle  ";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="text-info">Detalle Inventario: @Html.DisplayFor(m => m.Inventario.Id)</h2>
+            <ul class="list-group">
+                <li class="list-group-item">ID : @Html.DisplayFor(m => m.Inventario.Id)</li>
+                <li class="list-group-item">Nombre : @Html.DisplayFor(m => m.Inventario.ProductosId)</li>
+                <li class="list-group-item">Categoria : @Html.DisplayFor(m => m.Inventario.Productos.Nombre)</li>
+                <li class="list-group-item">Unidades : @Html.DisplayFor(m => m.Inventario.Codigo)</li>
+                <li class="list-group-item">Precio : @Html.DisplayFor(m => m.Inventario.Stock)</li>
+               
+            </ul>
+
+
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6 ">
+            <a asp-page="Index" class="btn btn-success"> Volver</a>
+        </div>
+
+    </div>
+</div>

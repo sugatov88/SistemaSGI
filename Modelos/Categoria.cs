@@ -8,7 +8,7 @@ namespace SistemaSGI.Modelos
         
 
         [Key]
-        //[Display(Name = "codigo")]
+        //[Display(Name = "Codigo")]
         public int Id { get; set; }
         
         [Required(ErrorMessage="Este campo es obligatorio")]

@@ -157,7 +157,7 @@ namespace SistemaSGI.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Inventario_productosId",
                 table: "Inventario",
-                column: "productosId");
+                column: "ProductosId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Productos_categoriaId",

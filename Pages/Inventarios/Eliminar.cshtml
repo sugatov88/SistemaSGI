@@ -1,0 +1,49 @@
+﻿@page
+@model SistemaSGI.Pages.Inventarios.EliminarModel
+@{
+    ViewData["Title"] = "Eliminar inventario";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="text-info">Eliminar inventario</div>
+
+            <form method="post">
+                <input type="hidden" asp-for="InventarioVm.Inventario.Id" />
+               
+                <div class="mb-3">
+                    <label asp-for="InventarioVm.Inventario.Productos" class="form-label"></label>
+                    <input asp-for="InventarioVm.Inventario.ProductosId"
+                            asp-items="@(new SelectList(Model.InventarioVm.ListaProductos,"Id","Nombre") )" class="form-control"readonly/>
+                    <span asp-validation-for="InventarioVm.Inventario.Productos.Nombre" class="text-danger"></span>
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="InventarioVm.Inventario.Codigo" class="form-label"></label>
+                    <input asp-for="InventarioVm.Inventario.Codigo" class="form-control" readonly/>
+                    <span asp-validation-for="InventarioVm.Inventario.Codigo" class="text-danger"></span>
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="InventarioVm.Inventario.Stock" class="form-label"></label>
+                    <input asp-for="InventarioVm.Inventario.Stock" class="form-control"readonly />
+                    <span asp-validation-for="InventarioVm.Inventario.Stock" class="text-danger"></span>
+
+                </div>
+                
+
+                <button type="submit" class="btn btn-primary "> Eliminar</button>
+            </form>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6 ">
+            <a asp-page="Index" class="btn btn-success"> Volver</a>
+        </div>
+
+    </div>
+</div>
+
+

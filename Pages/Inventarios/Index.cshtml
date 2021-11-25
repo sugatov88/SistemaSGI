@@ -1,0 +1,62 @@
+﻿@page
+@model SistemaSGI.Pages.Inventarios.IndexModel
+@{
+    ViewData["Title"] = "Inventario";
+}
+
+
+<div class=" = " container">
+    <div class="row">
+        <div class=" = " col-9">
+            <h2 class=" text-info">Inventario </h2>
+        </div>
+        <div class="col-3">
+            <a class="btn btn-secondary" asp-page="/Inventarios/Crear">Agregar nuevo</a>
+        </div>
+        <br />
+        <br />
+        @if (Model.Inventarios.Count() > 0)
+        {
+            <table id="tblInventarios" class="table table-striped table-bordered" style="width: 100%;">
+                <thead>
+                    <tr>
+                        @*<th>@Html.DisplayFor(m => m.Inventarios.FirstOrDefault().Id)</th>*@
+                        <th>Id </th>
+                        <th>id</th>
+                        <th>Producto </th>
+                        <th>Codigo</th>
+                        <th>Stock </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var Inventarios in Model.Inventarios)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(m => Inventarios.Id)</td>
+                            <td>@Html.DisplayFor(m => Inventarios.ProductosId)</td>
+                            <td>@Html.DisplayFor(m => Inventarios.Productos.Nombre)</td>
+                            <td>@Html.DisplayFor(m => Inventarios.Codigo)</td>
+                            <td>@Html.DisplayFor(m => Inventarios.Stock)</td>
+                            
+                            <td>
+                                <a class="btn btn-success" asp-page="../Inventarios/Detalle" asp-route-id="@Inventarios.Id"> Detalles</a>
+                                <a class="btn btn-warning" asp-page="../Inventarios/Editar" asp-route-id="@Inventarios.Id"> Editar</a>
+                                <a class="btn btn-danger" asp-page="../Inventarios/Eliminar" asp-route-id="@Inventarios.Id"> Eliminar</a>
+
+
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+        }
+        else
+        {
+            <p> no hay Productos</p>
+        }
+
+    </div>
+
+</div>

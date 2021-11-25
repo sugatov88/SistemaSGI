@@ -165,20 +165,20 @@ namespace SistemaSGI.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("codigo")
+                    b.Property<string>("Codigo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("productosId")
+                    b.Property<int>("ProductosId")
                         .HasColumnType("int");
 
-                    b.Property<string>("stock")
+                    b.Property<string>("Stock")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("productosId");
+                    b.HasIndex("ProductosId");
 
                     b.ToTable("Inventario");
                 });
@@ -253,13 +253,13 @@ namespace SistemaSGI.Migrations
 
             modelBuilder.Entity("SistemaSGI.Modelos.Inventario", b =>
                 {
-                    b.HasOne("SistemaSGI.Modelos.Productos", "productos")
+                    b.HasOne("SistemaSGI.Modelos.Productos", "Productos")
                         .WithMany()
-                        .HasForeignKey("productosId")
+                        .HasForeignKey("ProductosId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("productos");
+                    b.Navigation("Productos");
                 });
 
             modelBuilder.Entity("SistemaSGI.Modelos.Productos", b =>
