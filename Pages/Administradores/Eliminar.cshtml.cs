@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -24,18 +24,18 @@ namespace SistemaSGI.Pages.Administradores
         
         
     
-        public async void OnGet(int id)
+        public  void OnGet(int id)
             {
 
-            Administrador = await _contexto.Administrador.FindAsync(id);
+            Administrador =  _contexto.Administrador.Find(id);
             }
 
-        public async Task<IActionResult> OnPost()
+        public  IActionResult OnPost()
         {
           
 
             {
-                var AdministradorDesdeDb = await _contexto.Administrador.FindAsync(Administrador.Id);
+                var AdministradorDesdeDb =  _contexto.Administrador.Find(Administrador.Id);
                 if(AdministradorDesdeDb== null)
                 {
                     return NotFound();
@@ -43,7 +43,7 @@ namespace SistemaSGI.Pages.Administradores
                 _contexto.Administrador.Remove(AdministradorDesdeDb);
                 AdministradorDesdeDb.Nombre = Administrador.Nombre;
                
-                await _contexto.SaveChangesAsync();
+                 _contexto.SaveChanges();
                 return RedirectToPage("Index");
             }
            

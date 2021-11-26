@@ -10,6 +10,7 @@
             <h2 class="text-info">Editar Proveedor</h2>
 
             <form method="post">
+                <input type="hidden" asp-for="Proveedores.Id" />
                 <div class="mb-3">
                     <label asp-for="Proveedores.Nombre" class="form-label"></label>
                     <input asp-for="Proveedores.Nombre" class="form-control" />

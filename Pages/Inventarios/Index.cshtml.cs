@@ -23,11 +23,17 @@ namespace SistemaSGI.Pages.Inventarios
 
         public IEnumerable<Inventario> Inventarios { get; set; }
 
-        public async Task OnGet()
+        //public async Task OnGet()
+        //{
+        //    Inventarios = await _contexto.Inventario.Include(c=>c.Categoria).ToListAsync();
+        //    Inventarios = await _contexto.Inventario.Include(c => c._proveedor).ToListAsync();
+        //    Inventarios = await _contexto.Inventario.Include(c => c.Bodega).ToListAsync();
+        //}
+        public void OnGet()
         {
-            Inventarios = await _contexto.Inventario.Include(c=>c.Categoria).ToListAsync();
-            Inventarios = await _contexto.Inventario.Include(c => c._proveedor).ToListAsync();
-            Inventarios = await _contexto.Inventario.Include(c => c.Bodega).ToListAsync();
+            Inventarios =  _contexto.Inventario.Include(c => c.Categoria).ToList();
+            Inventarios =  _contexto.Inventario.Include(c => c._proveedor).ToList();
+            Inventarios =  _contexto.Inventario.Include(c => c.Bodega).ToList();
         }
 
     }

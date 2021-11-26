@@ -24,18 +24,18 @@ namespace SistemaSGI.Pages.Clientes
         
         
     
-        public async void OnGet(int id)
+        public void OnGet(int id)
             {
 
-            Cliente = await _contexto.Cliente.FindAsync(id);
+            Cliente =  _contexto.Cliente.Find(id);
             }
 
-        public async Task<IActionResult> OnPost()
+        public  IActionResult OnPost()
         {
             if (ModelState.IsValid)
 
             {
-                var ClienteDesdeDb = await _contexto.Cliente.FindAsync(Cliente.Id);
+                var ClienteDesdeDb =  _contexto.Cliente.Find(Cliente.Id);
 
                 ClienteDesdeDb.Nombre = Cliente.Nombre;
                 ClienteDesdeDb.Apellido = Cliente.Apellido;
@@ -44,7 +44,7 @@ namespace SistemaSGI.Pages.Clientes
                 ClienteDesdeDb.Email = Cliente.Email;
                 ClienteDesdeDb.Telefono = Cliente.Telefono;
 
-                await _contexto.SaveChangesAsync();
+                 _contexto.SaveChanges();
                 return RedirectToPage("Index");
             }
             else

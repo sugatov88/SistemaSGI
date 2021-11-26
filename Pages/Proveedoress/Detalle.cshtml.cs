@@ -25,10 +25,10 @@ namespace SistemaSGI.Pages.Proveedoress
 
 
 
-        public async void OnGet(int id)
+        public  void OnGet(int id)
         {
 
-            Proveedores = await _contexto.Proveedores.FindAsync(id);
+            Proveedores =  _contexto.Proveedores.Find(id);
         }
     }
 

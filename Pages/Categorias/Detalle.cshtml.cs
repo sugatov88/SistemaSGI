@@ -25,10 +25,10 @@ namespace SistemaSGI.Pages.Categorias
 
 
 
-        public async void OnGet(int id)
+        public  void OnGet(int id)
         {
 
-            Categoria = await _contexto.Categoria.FindAsync(id);
+            Categoria =  _contexto.Categoria.Find(id);
         }
     }
 

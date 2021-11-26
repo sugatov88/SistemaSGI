@@ -20,18 +20,30 @@ namespace SistemaSGI.Pages.Inventarios
         }
         [BindProperty]
         public Inventario Inventarios { get; set; }
-        public async void OnGet(int id)
+        public  void OnGet(int id)
         {
-            Inventarios = await _contexto.Inventario
+            Inventarios = _contexto.Inventario
                 .Where(c => c.Id == id)
                 .Include(c => c.Categoria)
-                .FirstOrDefaultAsync();
-            Inventarios = await _contexto.Inventario
+                .FirstOrDefault();
+            Inventarios =  _contexto.Inventario
                 .Where(c => c.Id == id)
                 .Include(c => c._proveedor)
-                .FirstOrDefaultAsync();
+                .FirstOrDefault();
 
         }
+        //public async void OnGet(int id)
+        //{
+        //    Inventarios = await _contexto.Inventario
+        //        .Where(c => c.Id == id)
+        //        .Include(c => c.Categoria)
+        //        .FirstOrDefaultAsync();
+        //    Inventarios = await _contexto.Inventario
+        //        .Where(c => c.Id == id)
+        //        .Include(c => c._proveedor)
+        //        .FirstOrDefaultAsync();
+
+        //}
 
 
     }

@@ -23,9 +23,9 @@ namespace SistemaSGI.Pages.Clientes
 
         public IEnumerable<Cliente> Clientes { get; set; }
 
-        public async Task OnGet()
+        public void OnGet()
         {
-            Clientes = await _contexto.Cliente.ToListAsync();
+            Clientes =  _contexto.Cliente.ToList();
         }
     }
 }

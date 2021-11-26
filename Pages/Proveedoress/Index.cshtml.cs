@@ -23,9 +23,13 @@ namespace SistemaSGI.Pages.Proveedoress
 
         public IEnumerable<Proveedores> Proveedoress { get; set; }
 
-        public async Task OnGet()
+        //public async Task OnGet()
+        //{
+        //    Proveedoress = await _contexto.Proveedores.ToListAsync();
+        //}
+        public void  OnGet()
         {
-            Proveedoress = await _contexto.Proveedores.ToListAsync();
+            Proveedoress =  _contexto.Proveedores.ToList();
         }
     }
 }

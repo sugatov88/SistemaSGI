@@ -25,10 +25,10 @@ namespace SistemaSGI.Pages.Clientes
 
 
 
-        public async void OnGet(int id)
+        public  void OnGet(int id)
         {
 
-            Cliente = await _contexto.Cliente.FindAsync(id);
+            Cliente =  _contexto.Cliente.Find(id);
         }
     }
 

@@ -24,18 +24,18 @@ namespace SistemaSGI.Pages.Proveedoress
         
         
     
-        public async void OnGet(int id)
+        public  void OnGet(int id)
             {
 
-            Proveedores = await _contexto.Proveedores.FindAsync(id);
+            Proveedores = _contexto.Proveedores.Find(id);
             }
 
-        public async Task<IActionResult> OnPost()
+        public  IActionResult OnPost()
         {
           
 
             {
-                var ProveedoresDesdeDb = await _contexto.Proveedores.FindAsync(Proveedores.Id);
+                var ProveedoresDesdeDb =  _contexto.Proveedores.Find(Proveedores.Id);
                 if(ProveedoresDesdeDb== null)
                 {
                     return NotFound();
@@ -43,7 +43,7 @@ namespace SistemaSGI.Pages.Proveedoress
                 _contexto.Proveedores.Remove(ProveedoresDesdeDb);
                 ProveedoresDesdeDb.Nombre = Proveedores.Nombre;
                
-                await _contexto.SaveChangesAsync();
+                 _contexto.SaveChanges();
                 return RedirectToPage("Index");
             }
            

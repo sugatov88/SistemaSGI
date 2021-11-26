@@ -25,12 +25,12 @@ namespace SistemaSGI.Pages.Companias
         public void OnGet()
         {
         }
-        public async Task<IActionResult> OnPost()
+        public IActionResult OnPost()
         {
             if (ModelState.IsValid)
             {
-                await _contexto.Compania.AddAsync(Compania);
-                await _contexto.SaveChangesAsync();
+                _contexto.Compania.Add(Compania);
+                _contexto.SaveChanges();
                 return RedirectToPage("Index");
             }
             else

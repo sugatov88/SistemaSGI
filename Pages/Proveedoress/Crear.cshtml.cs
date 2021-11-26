@@ -25,12 +25,12 @@ namespace SistemaSGI.Pages.Proveedoress
         public void OnGet()
         {
         }
-        public async Task <IActionResult> OnPost()
+        public  IActionResult OnPost()
         {
             if (ModelState.IsValid)
             {
-                await _contexto.Proveedores.AddAsync(Proveedores);
-                await _contexto.SaveChangesAsync();
+                _contexto.Proveedores.Add(Proveedores);
+                _contexto.SaveChanges();
                 return RedirectToPage("Index");
             }
             else

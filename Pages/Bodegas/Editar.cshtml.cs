@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -24,23 +24,23 @@ namespace SistemaSGI.Pages.Bodegas
         
         
     
-        public async void OnGet(int id)
+        public  void OnGet(int? id)
             {
 
-            Bodega = await _contexto.Bodega.FindAsync(id);
+            Bodega =  _contexto.Bodega.Find(id);
             }
 
-        public async Task<IActionResult> OnPost()
+        public  IActionResult OnPost()
         {
             if (ModelState.IsValid)
 
             {
-                var BodegaDesdeDb = await _contexto.Bodega.FindAsync(Bodega.Id);
+                var BodegaDesdeDb =  _contexto.Bodega.Find(Bodega.Id);
 
                 BodegaDesdeDb.Codigo = Bodega.Codigo;
-                BodegaDesdeDb.Codigo = Bodega.Stock;
+                BodegaDesdeDb.Stock = Bodega.Stock;
 
-                await _contexto.SaveChangesAsync();
+                 _contexto.SaveChanges();
                 return RedirectToPage("Index");
             }
             else

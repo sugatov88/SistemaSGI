@@ -10,6 +10,7 @@
             <h2 class="text-info">Editar Cliente</h2>
 
             <form method="post">
+                <input type="hidden" asp-for="Cliente.Id" />
                 <div class="mb-3">
                     <label asp-for="Cliente.Nombre" class="form-label"></label>
                     <input asp-for="Cliente.Nombre" class="form-control" />

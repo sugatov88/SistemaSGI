@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -24,18 +24,18 @@ namespace SistemaSGI.Pages.Companias
         
         
     
-        public async void OnGet(int id)
+        public  void OnGet(int id)
             {
 
-            Compania = await _contexto.Compania.FindAsync(id);
+            Compania =  _contexto.Compania.Find(id);
             }
 
-        public async Task<IActionResult> OnPost()
+        public IActionResult OnPost()
         {
           
 
             {
-                var CompaniaDesdeDb = await _contexto.Compania.FindAsync(Compania.Id);
+                var CompaniaDesdeDb =  _contexto.Compania.Find(Compania.Id);
                 if(CompaniaDesdeDb== null)
                 {
                     return NotFound();
@@ -43,7 +43,7 @@ namespace SistemaSGI.Pages.Companias
                 _contexto.Compania.Remove(CompaniaDesdeDb);
                 CompaniaDesdeDb.Nombre = Compania.Nombre;
                
-                await _contexto.SaveChangesAsync();
+                 _contexto.SaveChanges();
                 return RedirectToPage("Index");
             }
            

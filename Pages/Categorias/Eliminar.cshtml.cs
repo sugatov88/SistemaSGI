@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -24,18 +24,18 @@ namespace SistemaSGI.Pages.Categorias
         
         
     
-        public async void OnGet(int id)
+        public  void OnGet(int id)
             {
 
-            Categoria = await _contexto.Categoria.FindAsync(id);
+            Categoria =  _contexto.Categoria.Find(id);
             }
 
-        public async Task<IActionResult> OnPost()
+        public  IActionResult OnPost()
         {
           
 
             {
-                var CategoriaDesdeDb = await _contexto.Categoria.FindAsync(Categoria.Id);
+                var CategoriaDesdeDb =  _contexto.Categoria.Find(Categoria.Id);
                 if(CategoriaDesdeDb== null)
                 {
                     return NotFound();
@@ -43,7 +43,7 @@ namespace SistemaSGI.Pages.Categorias
                 _contexto.Categoria.Remove(CategoriaDesdeDb);
                 CategoriaDesdeDb.NombreCategoria = Categoria.NombreCategoria;
                
-                await _contexto.SaveChangesAsync();
+                 _contexto.SaveChanges();
                 return RedirectToPage("Index");
             }
            

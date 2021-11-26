@@ -10,6 +10,7 @@
             <h2 class="text-info">Editar Administrador</h2>
 
             <form method="post">
+                <input type="hidden" asp-for="Administrador.Id" />
                 <div class="mb-3">
                     <label asp-for="Administrador.Nombre" class="form-label"></label>
                     <input asp-for="Administrador.Nombre" class="form-control" />

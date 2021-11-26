@@ -25,10 +25,10 @@ namespace SistemaSGI.Pages.Companias
 
 
 
-        public async void OnGet(int id)
+        public  void OnGet(int id)
         {
 
-            Compania = await _contexto.Compania.FindAsync(id);
+            Compania =  _contexto.Compania.Find(id);
         }
     }
 

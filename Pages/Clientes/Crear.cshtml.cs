@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SistemaSGI.Datos;
@@ -25,12 +25,12 @@ namespace SistemaSGI.Pages.Clientes
         public void OnGet()
         {
         }
-        public async Task<IActionResult> OnPost()
+        public  IActionResult OnPost()
         {
             if (ModelState.IsValid)
             {
-                await _contexto.Cliente.AddAsync(Cliente);
-                await _contexto.SaveChangesAsync();
+                 _contexto.Cliente.Add(Cliente);
+                 _contexto.SaveChanges();
                 return RedirectToPage("Index");
             }
             else

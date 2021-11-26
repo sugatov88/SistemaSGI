@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SistemaSGI.Datos;
@@ -25,10 +25,10 @@ namespace SistemaSGI.Pages.Bodegas
 
 
 
-        public async void OnGet(int id)
+        public  void OnGet(int id)
         {
 
-            Bodega = await _contexto.Bodega.FindAsync(id);
+            Bodega =  _contexto.Bodega.Find(id);
         }
     }
 

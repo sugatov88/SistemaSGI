@@ -27,13 +27,13 @@ namespace SistemaSGI.Pages.Inventarios
 
 
 
-        public async Task<IActionResult> OnGet(int id)
+        public IActionResult OnGet(int id)
         {
             InventariosVm = new CrearInventarioVm()
             {
-                ListaCategorias = await _contexto.Categoria.ToListAsync(),
-                ListaProvedores = await _contexto.Proveedores.ToListAsync(),
-                Inventario = await _contexto.Inventario.FindAsync(id)
+                ListaCategorias = _contexto.Categoria.ToList(),
+                ListaProvedores = _contexto.Proveedores.ToList(),
+                Inventario =  _contexto.Inventario.Find(id)
 
 
 
@@ -42,13 +42,28 @@ namespace SistemaSGI.Pages.Inventarios
             return Page();
 
         }
+        //public async Task<IActionResult> OnGet(int id)
+        //{
+        //    InventariosVm = new CrearInventarioVm()
+        //    {
+        //        ListaCategorias = await _contexto.Categoria.ToListAsync(),
+        //        ListaProvedores = await _contexto.Proveedores.ToListAsync(),
+        //        Inventario = await _contexto.Inventario.FindAsync(id)
 
-        public async Task<IActionResult> OnPost()
+
+
+
+        //    };
+        //    return Page();
+
+        
+
+        public IActionResult OnPost()
         {
 
 
             {
-                var productos = await _contexto.Inventario.FindAsync(InventariosVm.Inventario.Id);
+                var productos = _contexto.Inventario.Find(InventariosVm.Inventario.Id);
                 if (productos == null)
                 {
                     return NotFound();
@@ -57,10 +72,29 @@ namespace SistemaSGI.Pages.Inventarios
                 _contexto.Inventario.Remove(productos);
                 
 
-                await _contexto.SaveChangesAsync();
+                _contexto.SaveChanges();
                 return RedirectToPage("Index");
             }
 
         }
-    }
+    //public async Task<IActionResult> OnPost()
+    //{
+
+
+    //    {
+    //        var productos = await _contexto.Inventario.FindAsync(InventariosVm.Inventario.Id);
+    //        if (productos == null)
+    //        {
+    //            return NotFound();
+    //        }
+
+    //        _contexto.Inventario.Remove(productos);
+
+
+    //        await _contexto.SaveChangesAsync();
+    //        return RedirectToPage("Index");
+    //    }
+
+    //}
+}
 }
