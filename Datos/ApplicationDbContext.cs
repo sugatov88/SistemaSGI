@@ -30,5 +30,27 @@ namespace SistemaSGI.Datos
 
         public DbSet<Proveedores> Proveedores { get; set; }
 
+
+
+
+        protected override void OnConfiguring(
+            DbContextOptionsBuilder optionsBuilder
+        )
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder
+          
+               .UseSqlServer("Server= (localdb)\\ MSSQLLocalDB; Initial Catalog =SistemaSGI_DB_2\\");
+              
+            }
+        }
+
     }
+
+
+
+ 
+
+
 }
